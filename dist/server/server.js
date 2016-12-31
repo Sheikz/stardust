@@ -9,6 +9,6 @@ app.get('/api/test', function (req, res) {
     res.send({ value: value += 2 });
     console.log("a");
 });
-app.listen(3000, function () {
+app.listen(PORT, function () {
     console.log(`App listening on port ${PORT}`);
 });
