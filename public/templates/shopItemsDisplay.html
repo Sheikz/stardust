@@ -1,0 +1,5 @@
+<div class="row" ng-repeat="items in $ctrl.items | groupBy:4">
+  <div class="col-xs-3" ng-repeat="item in items">
+    <shop-item name="item.name" description="item.description" image="item.image"></shop-item>
+  </div>
+</div>

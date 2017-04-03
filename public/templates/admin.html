@@ -1,0 +1,26 @@
+<div ng-controller="shopAdmin as $ctrl">
+
+  <form>
+
+    <h3>Add new Item</h3>
+    <div class="form-group">
+      <label>Name</label>
+      <input ng-model="$ctrl.newItem.name" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea ng-model="$ctrl.newItem.description" rows="3" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity</label>
+      <input ng-model="$ctrl.newItem.quantity" type="number" class="form-control">
+    </div>
+
+    <button ng-click="$ctrl.addItem()" class="btn btn-primary">Add</button>
+
+  </form>
+
+  <shop-items-display items="$ctrl.items"></shop-items-display>
+</div>

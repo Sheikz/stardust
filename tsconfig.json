@@ -2,9 +2,6 @@
     "compilerOptions": {
       "module": "commonjs",
         "target": "ES6",
-        "outDir": "dist/server"
-    },
-    "include": [
-        "src/server/**/*.ts"
-    ]
+        "outDir": "dist"
+    }
 }
