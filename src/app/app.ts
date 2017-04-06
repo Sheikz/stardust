@@ -5,4 +5,5 @@ import "./services/shop.service";
 import "./components/shop";
 import "./controllers/shop.admin.controller";
 import "./controllers/shop.controller";
+import "./controllers/info.controller";
 import "./routes/routes";

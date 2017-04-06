@@ -10,6 +10,11 @@ let config = function($stateProvider){
       name: 'admin',
       url: '/admin',
       templateUrl: 'templates/admin.html',
+    },
+    {
+      name: 'info',
+      url: '/info',
+      templateUrl: 'templates/info.html',
     }
   ]
   states.forEach((state) => $stateProvider.state(state));

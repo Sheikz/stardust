@@ -5,29 +5,16 @@
   </head>
 <body class="container" ng-app="app">
 
-  <h1>Wedding Lynn &amp; Thomas</h1>
-
+  <a ui-sref="info" ui-sref-active="active">The Wedding</a>
   <a ui-sref="shop" ui-sref-active="active">Shop</a>
   <a ui-sref="admin" ui-sref-active="active">Admin</a>
 
   <ui-view></ui-view>
 
-  <!--
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js"
+    async defer></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.14/angular-filter.min.js"></script> 
-  -->
-
-    <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
-  <!--
-  <script src="app.js"></script>
-  <script src="components/shop.js"></script>
-  <script src="controllers/shop.controller.js"></script>
-  <script src="controllers/shop.admin.controller.js"></script>
-  <script src="services/shop.service.js"></script>
-  <script src="routes/routes.js"></script>
-  -->
   <script src="vendors.min.js"></script>
   <script src="app.min.js"></script>
   </body>

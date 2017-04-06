@@ -6,18 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -w --color",
+    "build": "webpack --color",
     "server": "tsc -w",
     "start": "node dist/server/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/angular": "^1.6.14",
+    "@types/angular-ui-router": "^1.1.36",
+    "@types/google-maps": "^3.2.0",
     "@types/lodash": "^4.14.43",
     "angular": "^1.6.2",
     "angular-filter": "^0.5.15",
     "angular-ui-router": "^0.4.2",
     "body-parser": "^1.16.1",
     "express": "^4.14.0",
+    "google-maps": "^3.2.1",
     "lodash": "^4.17.2",
     "pg": "^6.1.2",
     "sequelize": "^3.30.2",

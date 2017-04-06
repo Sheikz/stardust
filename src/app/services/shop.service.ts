@@ -8,7 +8,7 @@ export class ShopService{
     console.log("Shop test");
   }
 
-  getItems() : angular.IPromise<any>{
+  getItems() : ng.IPromise<any>{
 
     let defer = this.$q.defer();
 

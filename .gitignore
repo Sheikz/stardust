@@ -1,6 +1,6 @@
-.sass-cache
+dist/.sass-cache
 node_modules
 *.log
 .env
 config
-dist
+dist/
