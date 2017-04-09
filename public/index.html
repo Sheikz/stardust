@@ -1,14 +1,23 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="app.css" >
+    <link rel="stylesheet" href="base.css" >
   </head>
 <body class="container" ng-app="app">
     
-
-  <a ui-sref="info" ui-sref-active="active">The Wedding</a>
-  <a ui-sref="shop" ui-sref-active="active">Shop</a>
-  <a ui-sref="admin" ui-sref-active="active">Admin</a>
+  <div class="menu">
+    <div class="row">
+      <div class="col-xs-3">
+        <a class="menu-button" ui-sref="info" ui-sref-active="active">The Wedding</a>
+      </div>
+      <div class="col-xs-3 col-xs-offset-1">
+        <a class="menu-button" ui-sref="shop" ui-sref-active="active">Shop</a>
+      </div>
+      <div class="col-xs-3 col-xs-offset-1">
+        <a class="menu-button" ui-sref="admin" ui-sref-active="active">Admin</a>
+      </div>
+    </div>
+  </div>
 
   <ui-view></ui-view>
 

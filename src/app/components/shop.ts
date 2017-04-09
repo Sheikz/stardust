@@ -1,5 +1,5 @@
 let ShopItemComponent : ng.IComponentOptions = {
-  templateUrl: "templates/shopItem.html",
+  template: require('./shopItem.html'),
   bindings:{
     name: "<",
     description: "<",
@@ -9,7 +9,7 @@ let ShopItemComponent : ng.IComponentOptions = {
 }
 
 let ShopItemsDisplay : ng.IComponentOptions = {
-  templateUrl: "templates/shopItemsDisplay.html",
+  template: require('./shopItemsDisplay.html'),
   bindings: {
     items: "<",
   }
