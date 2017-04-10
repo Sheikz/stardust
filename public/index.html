@@ -1,31 +1,23 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="base.css" >
   </head>
-<body class="container" ng-app="app">
+  <body class="container" ng-app="app">
     
-  <div class="menu">
-    <div class="row">
-      <div class="col-xs-3">
-        <a class="menu-button" ui-sref="info" ui-sref-active="active">The Wedding</a>
-      </div>
-      <div class="col-xs-3 col-xs-offset-1">
-        <a class="menu-button" ui-sref="shop" ui-sref-active="active">Shop</a>
-      </div>
-      <div class="col-xs-3 col-xs-offset-1">
-        <a class="menu-button" ui-sref="admin" ui-sref-active="active">Admin</a>
-      </div>
+    <div class="menu">
+      <a class="menu-button" ui-sref="info" ui-sref-active="active">Info</a>
+      <a class="menu-button" ui-sref="shop" ui-sref-active="active">Shop</a>
+      <a class="menu-button" ui-sref="admin" ui-sref-active="active">Admin</a>
     </div>
-  </div>
 
-  <ui-view></ui-view>
+    <div class="page-inner"></div>
+      <ui-view></ui-view>
 
-  <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js"
-    async defer></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
 
-  <script src="vendors.min.js"></script>
-  <script src="app.min.js"></script>
+    <script src="vendors.min.js"></script>
+    <script src="app.min.js"></script>
   </body>
 </html>

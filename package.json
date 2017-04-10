@@ -8,7 +8,7 @@
     "watch": "webpack -w --color",
     "build": "webpack --color",
     "server": "tsc -w",
-    "start": "concurrently \"tsc -w -p './src/server'\" \"node dist/server.js\" \"webpack -w --color\""
+    "start": "concurrently \"tsc -w -p ./src/server\" \"node dist/server.js\" \"webpack -w --color\""
   },
   "author": "",
   "license": "ISC",
@@ -45,6 +45,7 @@
     "tsify": "^2.0.3",
     "typescript": "^2.1.4",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "webpack": "^2.3.3"
   }
 }

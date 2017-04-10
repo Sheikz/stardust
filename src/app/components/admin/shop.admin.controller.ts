@@ -21,6 +21,7 @@ class ShopAdminController {
     this.Shop.getItems()
     .then(items => {
       this.items = items;
+      console.log('items', this.items);
     })
   }
 
@@ -36,6 +37,4 @@ class ShopAdminController {
 }
 
 angular.module('app')
-  .controller('shopAdmin', ShopAdminController);
-
-console.log("shop admin registered");
+  .controller('ShopAdmin', ShopAdminController);

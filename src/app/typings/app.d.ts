@@ -1,9 +1,15 @@
 declare module 'app' {
+
     interface IShopItem{
+        id: number,
         name: string,
         description: string,
-        quantity: number,
+        price: number,
         image: string,
+    }
+
+    interface ICartItem extends IShopItem{
+        quantity: number;
     }
 }
 

@@ -4,17 +4,17 @@ let config = function($stateProvider){
     {
       name: 'shop',
       url: '/shop',
-      templateUrl: "templates/shop.html"
+      template: require('../components/shop/shop.html')
     },
     {
       name: 'admin',
       url: '/admin',
-      templateUrl: 'templates/admin.html',
+      template: require('../components/admin/admin.html')
     },
     {
       name: 'info',
       url: '/info',
-      templateUrl: 'templates/info.html',
+      template: require('../components/info/info.html')
     }
   ]
   states.forEach((state) => $stateProvider.state(state));
