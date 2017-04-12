@@ -1,26 +1,45 @@
 <div ng-controller="ShopAdmin as $ctrl">
 
+
   <form>
 
     <h3>Add new Item</h3>
-    <div class="form-group">
-      <label>Name</label>
-      <input ng-model="$ctrl.newItem.name" type="text" class="form-control">
-    </div>
 
-    <div class="form-group">
-      <label>Description</label>
-      <textarea ng-model="$ctrl.newItem.description" rows="3" class="form-control"></textarea>
-    </div>
+      <div class="row">
+        <div class="col-md-6">
 
-    <div class="form-group">
-      <label>Quantity</label>
-      <input ng-model="$ctrl.newItem.quantity" type="number" class="form-control">
-    </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input ng-model="$ctrl.newItem.name" type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Price</label>
+            <input ng-model="$ctrl.newItem.price" type="number" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Quantity</label>
+            <input ng-model="$ctrl.newItem.quantity" type="number" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Description</label>
+            <textarea ng-model="$ctrl.newItem.description" rows="2" class="form-control"></textarea>
+          </div>
+
+
+          <div class="form-group">
+            <label>Image URL</label>
+            <input ng-model="$ctrl.newItem.image" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
 
     <button ng-click="$ctrl.addItem()" class="btn btn-primary">Add</button>
 
   </form>
 
-  <shop-items-display items="$ctrl.items"></shop-items-display>
+  <shop-items-display items="$ctrl.items" admin="true"></shop-items-display>
 </div>

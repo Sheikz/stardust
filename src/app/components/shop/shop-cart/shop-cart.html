@@ -1,5 +1,7 @@
-Added to cart:
-<div ng-repeat="item in $ctrl.cart">
-    {{item.name}} x{{item.quantity}}
+<div class="cart">
+    <h3>Added to cart:</h3>
+    <div ng-repeat="item in $ctrl.cart">
+        {{item.name}} x{{item.quantity}}
+    </div>
+    Total price: {{$ctrl.getTotal()}}
 </div>
-Total price: {{$ctrl.getTotal()}}

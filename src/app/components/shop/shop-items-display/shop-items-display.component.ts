@@ -9,6 +9,7 @@ export let ShopItemsDisplay : ng.IComponentOptions = {
   bindings: {
     items: "<",
     cart: "=",
+    admin: '<',
   },
   controller: Controller
 }

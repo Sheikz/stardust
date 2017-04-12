@@ -1,20 +1,21 @@
+import {ShopService} from './../../services/shop.service';
+import {IShopItem} from 'app';
+
 class ShopAdminController {
 
   public items;
 
-  public newItem : {
-    name: string,
-    description: string,
-    quantity: number;
-    imageUrl: string;
-  }
+  public newItem : IShopItem;
 
-  constructor(private $http : ng.IHttpService, private Shop){
-
-  }
+  constructor(
+    private $http : ng.IHttpService, 
+    private Shop : ShopService,
+    private $rootScope : ng.IRootScopeService)
+    {}
 
   $onInit(){
     this.refresh();
+    this.$rootScope.$on('REFRESH', () =>this.refresh());
   }
 
   private refresh(){
@@ -28,11 +29,6 @@ class ShopAdminController {
   public addItem(){
     this.Shop.addItem(this.newItem)
     .then(() => this.refresh());
-
-  }
-
-  public deleteItem(item){
-    this.Shop.deleteItem(item);
   }
 }
 

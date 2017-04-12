@@ -1,3 +1,4 @@
+import {ShopService} from './../../../services/shop.service';
 import {IShopItem, ICartItem} from 'app';
 import * as _ from 'lodash';
 
@@ -6,7 +7,10 @@ class Controller{
     public item : IShopItem;
     public cart : ICartItem[];
 
-    constructor(){
+    constructor(
+        private Shop : ShopService,
+        private $rootScope : ng.IRootScopeService,
+    ){
 
     }
 
@@ -20,6 +24,11 @@ class Controller{
             this.cart.push(newItem);
         }
     }
+
+    deleteItem(){
+        this.Shop.deleteItem(this.item)
+        .then(() => this.$rootScope.$emit('REFRESH'));
+    }
 }
 
 export let ShopItemComponent : ng.IComponentOptions = {
@@ -27,6 +36,7 @@ export let ShopItemComponent : ng.IComponentOptions = {
   bindings:{
     item: "=",
     cart: "=",
+    admin: "<",
   },
   controller: Controller,
 }

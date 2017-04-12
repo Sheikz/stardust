@@ -1,4 +1,4 @@
-.body {
+body {
   font-family: 'Montserrat', 'Circular', 'Helvetica', 'sans-serif'; }
 
 .menu {
@@ -18,8 +18,15 @@
   margin-left: 25px; }
 
 .page-inner {
-  margin-top: 100px; }
+  margin-top: 30px; }
 
 .shop-item {
   padding: 4px;
   margin-bottom: 20px; }
+  .shop-item .item-image {
+    border-radius: 15px 50px; }
+
+.cart {
+  border: grey solid;
+  border-radius: 30px;
+  padding: 20px; }
