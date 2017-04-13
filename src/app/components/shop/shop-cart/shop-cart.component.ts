@@ -1,3 +1,4 @@
+import {ShopService} from './../../../services/shop.service';
 import {ICartItem} from 'app';
 import * as _ from 'lodash';
 
@@ -5,8 +6,11 @@ class Controller{
 
     public cart : ICartItem[]
 
+    constructor(private Shop: ShopService)
+    {}
+
     getTotal(){
-        return _.reduce(this.cart, (a, b) => a + b.price * b.quantity , 0);
+        return this.Shop.getTotal(this.cart);
     }
 }
 

@@ -2,6 +2,6 @@
   <img class="img-responsive item-image" ng-src="{{$ctrl.item.image}}">
   <h3>{{$ctrl.item.name}}</h3>
   <p>{{$ctrl.item.description}}</p>
-  <button ng-click="$ctrl.addToCart()" class="btn btn-primary">Add to cart</button>
-  <button ng-show="$ctrl.admin" ng-click="$ctrl.deleteItem()" class="btn btn-danger">Delete item</button>
+  <button ng-click="$ctrl.addToCart()" class="btn btn-primary"><span class="glyphicon glyphicon-gift"></span> Offrir</button>
+  <button ng-show="$ctrl.admin" ng-click="$ctrl.deleteItem()" class="btn btn-danger">Delete</button>
 </div>

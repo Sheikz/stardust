@@ -6,12 +6,15 @@ export class ShopController{
   public items : IShopItem[];
   public cart : ICartItem[];
 
-  constructor(private $http : ng.IHttpService, private Shop : ShopService){}
+  constructor(
+    private $http : ng.IHttpService, 
+    private Shop : ShopService,
+    private $stateParams : ng.ui.IStateParamsService){}
 
   $onInit(){
     console.log("Shop component init");
     this.getItems();
-    this.cart = [];
+    this.cart = this.$stateParams['cart'] ? this.$stateParams['cart'] : [];
   }
 
   getItems(){

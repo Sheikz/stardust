@@ -1,7 +1,17 @@
 <div class="cart">
-    <h3>Added to cart:</h3>
-    <div ng-repeat="item in $ctrl.cart">
-        {{item.name}} x{{item.quantity}}
+    <h3>Liste de cadeaux</h3>
+    <div ng-show="$ctrl.cart.length == 0">
+        Votre liste est vide
     </div>
-    Total price: {{$ctrl.getTotal()}}
+    <div ng-hide="$ctrl.cart.length == 0">
+        <ul>
+            <li ng-repeat="item in $ctrl.cart">
+                {{item.name}} x{{item.quantity}}
+            </li>
+        </ul>
+        <strong>Prix total:</strong> {{$ctrl.getTotal()}} €
+        <div>
+            <button class="btn btn-primary" ui-sref="checkout({cart: $ctrl.cart})"><span class="glyphicon glyphicon-shopping-cart"></span> Envoyer</button>
+        </div>
+    </div>
 </div>

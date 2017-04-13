@@ -21,3 +21,9 @@ app.listen(PORT, function (){
 export const pool : pg.Pool = Database.createPool();
 
 setupShop(app);
+
+app.use((request, response) => {
+  response.sendFile('index.html', {
+    root: __dirname+'/../public/'
+  });
+})

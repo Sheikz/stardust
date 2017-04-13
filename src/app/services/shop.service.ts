@@ -1,5 +1,6 @@
 import {shopItems} from './shop-items.fixture';
-import {IShopItem} from 'app';
+import { IShopItem, ICartItem } from 'app';
+import * as _ from "lodash";
 
 export class ShopService{
 
@@ -7,8 +8,8 @@ export class ShopService{
 
   }
 
-  static test(){
-    console.log("Shop test");
+  getTotal(cart: ICartItem[]) : number {
+    return _.reduce(cart, (a, b) => a + b.price * b.quantity , 0);
   }
 
   getItems() : ng.IPromise<any>{
@@ -17,7 +18,7 @@ export class ShopService{
     // defer.resolve(shopItems);
     // return defer.promise;
 
-    this.$http.get('api/items')
+    this.$http.get('api/shop')
     .then(result => {
       defer.resolve(result.data);
     })
@@ -29,12 +30,16 @@ export class ShopService{
   }
 
   public addItem(item : IShopItem){
-    return this.$http.post('api/items', item);
+    return this.$http.post('api/shop', item);
   }
 
   public deleteItem(item : IShopItem){
     console.log('deleting item', item);
-    return this.$http.delete(`api/items/${item.id}`);
+    return this.$http.delete(`api/shop/${item.id}`);
+  }
+
+  public checkout(checkoutData : any){
+    return this.$http.post('api/shop/checkout', checkoutData);
   }
 }
 

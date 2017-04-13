@@ -1,51 +1,7 @@
-$primary: #ffffff;
-$secondary: #98FF98;
+@import "default-pre";
 
-$blue: #3fccda; 
-$magic-mint: #A9FBC3;
-$pastel-purple: #B594B6;
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
-body{
-  font-family: 'Montserrat', 'Circular', 'Helvetica', 'sans-serif';
-}
-
-.menu{
-  margin-top: 80px;
-
-  a{
-    background-color: $blue;
-    color: $primary;
-    border-radius: 30px;
-    padding: 8px;
-  }
-
-  a:hover{
-      background-color: $primary;
-      color: $blue;
-      text-decoration: none;
-  }
-}
-
-.menu-button{
-    margin-right: 25px;
-    margin-left: 25px;
-}
-
-.page-inner{
-    margin-top: 30px;
-}
-
-.shop-item{
-    padding: 4px;
-    margin-bottom: 20px;
-
-    .item-image{
-        border-radius: 15px 50px;
-    }
-}
-
-.cart{
-    border: grey solid;
-    border-radius: 30px;
-    padding: 20px;
-}
+@import "default-post";
+@import "style";

@@ -1,0 +1,30 @@
+<div ng-controller="checkoutController as $ctrl">
+
+    <h3>Résumé de votre cadeau:</h3>
+
+    <div ng-repeat="item in $ctrl.cart">
+        {{item.name}} - {{item.quantity}}
+    </div>
+    Prix total: {{$ctrl.getTotal()}}
+
+    <div ng-hide="$ctrl.validated">
+        <form name="form">
+            <div class="form-group">
+                <label>De la part de:</label>
+                <input class="form-control" type="text" ng-model="$ctrl.name" required>
+            </div>
+            <div class="form-group">
+                <label>Commentaire</label>
+                <textarea class="form-control" ng-model="$ctrl.comment"></textarea>
+            </div>
+
+            <button ng-click="$ctrl.validate()" ng-disabled="form.$invalid" class="btn btn-primary">C'est correct!</button>
+            <button ui-sref="shop({cart: $ctrl.cart})" class="btn btn-danger">Retour</button>
+        </form>
+    </div>
+    <div ng-show="$ctrl.validated">
+        Merci, nous avons bien reçu votre cadeau!
+        Veuillez verser la somme de <strong>{{$ctrl.getTotal()}} €</strong> sur le compte BE94 2100 6407 4414
+    </div>
+
+</div>
