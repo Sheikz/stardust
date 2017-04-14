@@ -6,3 +6,5 @@ config.ts
 dist/
 *.min.js
 base.css
+.vscode
+fonts
