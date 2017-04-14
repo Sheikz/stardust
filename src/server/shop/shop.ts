@@ -48,8 +48,8 @@ export function setupShop(app: Express){
         let price = _.reduce(cart, (a, b) => a + b.price * b.quantity , 0);
 
         console.log('Got checkout', data);
-        Database.executeQuery("INSERT INTO checkout (name, price) VALUES ($1, $2)",
-        [data.from, price]);
-        
+        Database.executeQuery("INSERT INTO checkout (name, price, cart) VALUES ($1, $2, $3)",
+        [data.from, price, JSON.stringify(cart)]);
+        response.sendStatus(200);
     });
 }

@@ -12,4 +12,10 @@ declare module 'app' {
     interface ICartItem extends IShopItem{
         quantity: number;
     }
+
+    interface ISubscription{
+        name: string,
+        dinner: boolean,
+        guests: [{name: string}];
+    }
 }
