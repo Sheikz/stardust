@@ -35,4 +35,7 @@
             <button class="btn btn-primary" ng-click="$ctrl.subscribe()" ng-disabled="form.$invalid">Subscribe</button>
         </div>
     </div>
+    <div ng-show="$ctrl.success">
+        <div class="alert alert-success alert-dismissible" role="alert">Merci, nous avons bien reçu votre inscription!</div>
+    </div>
 </form>

@@ -12,7 +12,7 @@ let config = function($stateProvider : ng.ui.IStateProvider, $locationProvider: 
     {
       name: 'admin',
       url: '/admin',
-      template: require('../components/admin/admin.html')
+      template: require('../components/admin/shop/shop.admin.html')
     },
     {
       name: 'info',
@@ -26,6 +26,11 @@ let config = function($stateProvider : ng.ui.IStateProvider, $locationProvider: 
       params: {
         cart: null
       }
+    },
+    {
+      name: 'guests',
+      url: '/guests',
+      template: '<guest-list></guest-list>'
     }
   ]
   states.forEach((state) => $stateProvider.state(state));

@@ -4,6 +4,7 @@ class Controller {
 
     public name : string;
     public dinner: boolean = true;
+    public success : boolean = false;
 
     public guests : any[] = [];
 
@@ -11,6 +12,16 @@ class Controller {
         private Guests : GuestsService
     )
     {}
+
+    $onInit(){
+        this.init();
+    }
+
+    private init(){
+        this.guests = [];
+        this.name = '';
+        this.dinner = true;
+    }
 
     addGuest(){
         this.guests.push({name: ''});
@@ -22,7 +33,11 @@ class Controller {
 
     subscribe(){
         console.log('subscribe', {name: this.name, dinner: this.dinner, guests: this.guests});
-        this.Guests.register(this.name, this.dinner, this.guests);
+        this.Guests.register(this.name, this.dinner, this.guests)
+        .then(response => {
+            this.success = true;
+            this.init();
+        })
     }
 }
 

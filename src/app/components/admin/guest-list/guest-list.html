@@ -1,0 +1,12 @@
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Nom</th>
+        <th>Dîner?</th>
+    </tr>
+    <tr ng-repeat="guest in $ctrl.guests track by $index">
+        <td>{{$index+1}}</td>
+        <td>{{guest.name}}</td>
+        <td>{{guest.dinner ? 'Oui' : 'Non'}}</td>
+    </tr>
+</table>

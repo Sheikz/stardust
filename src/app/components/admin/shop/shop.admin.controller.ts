@@ -1,7 +1,7 @@
-import {ShopService} from './../../services/shop.service';
-import {IShopItem} from 'app';
+import { IShopItem } from 'app';
+import { ShopService } from "../../../services/shop.service";
 
-class ShopAdminController {
+export class ShopAdminController {
 
   public items;
 
@@ -31,6 +31,3 @@ class ShopAdminController {
     .then(() => this.refresh());
   }
 }
-
-angular.module('app')
-  .controller('ShopAdmin', ShopAdminController);

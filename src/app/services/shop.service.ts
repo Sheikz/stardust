@@ -13,20 +13,7 @@ export class ShopService{
   }
 
   getItems() : ng.IPromise<any>{
-
-    let defer = this.$q.defer();
-    // defer.resolve(shopItems);
-    // return defer.promise;
-
-    this.$http.get('api/shop')
-    .then(result => {
-      defer.resolve(result.data);
-    })
-    .catch(error => {
-      defer.reject(error);
-    })
-
-    return defer.promise;
+    return this.$http.get('api/shop')
   }
 
   public addItem(item : IShopItem){
@@ -34,7 +21,6 @@ export class ShopService{
   }
 
   public deleteItem(item : IShopItem){
-    console.log('deleting item', item);
     return this.$http.delete(`api/shop/${item.id}`);
   }
 

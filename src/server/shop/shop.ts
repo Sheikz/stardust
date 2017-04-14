@@ -14,6 +14,7 @@ export function setupShop(app: Express){
         })
         .catch(err => {
             console.log('Error while getting items', err);
+            response.status(500).json({error: err});
         })
     });
 
@@ -26,7 +27,10 @@ export function setupShop(app: Express){
         .then(result => {
             response.json(result);
         })
-        .catch(err => console.log('error while posting item', err));
+        .catch(err => {
+            console.log('error while posting item', err);
+            response.status(500).json({error: err});
+        });
     })
 
     app.delete('/api/shop/:itemId', (request, response) => {
@@ -38,7 +42,10 @@ export function setupShop(app: Express){
             console.log('item deleted succesfully');
             response.json(result);
         })
-        .catch(err => console.log('error while deleting item', err));
+        .catch(err => {
+            console.log('error while deleting item', err)
+            response.status(500).json({error: err});
+        });
     })
 
     app.post('/api/shop/checkout', (request, response) => {
@@ -49,7 +56,13 @@ export function setupShop(app: Express){
 
         console.log('Got checkout', data);
         Database.executeQuery("INSERT INTO checkout (name, price, cart) VALUES ($1, $2, $3)",
-        [data.from, price, JSON.stringify(cart)]);
-        response.sendStatus(200);
+        [data.from, price, JSON.stringify(cart)])
+        .then(result => {
+            response.sendStatus(200);
+        })
+        .catch(err => {
+            console.log('error while doing checkout', err);
+            response.status(500).json({error: err});
+        })
     });
 }
