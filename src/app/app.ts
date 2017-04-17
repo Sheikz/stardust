@@ -5,5 +5,6 @@ import "./services/services.module";
 import "./components/shop/shop.module";
 import "./components/admin/admin.module";
 import "./components/info/info.module";
+import "./components/banner/banner.module";
 import "./routes/routes";
 import "./config";

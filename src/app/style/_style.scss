@@ -1,37 +1,55 @@
 
 body{
-  font-family: 'Montserrat', 'Circular', 'Helvetica', 'sans-serif';
+  font-family: 'Cabin', sans-serif;
+  font-size:15px;
+  background-color: white;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: $four;
+    padding: 20px;
+}
+
+.container{
+    background-color: white
 }
 
 .menu{
-  margin-top: 80px;
 
-  a{
-    background-color: $blue;
-    color: $primary;
-    border-radius: 30px;
-    padding: 8px;
-    margin-right: 25px;
-    margin-left: 25px;
-    text-decoration: none;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    .menu-item{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    a{
+        background-color: $blue;
+        color: $white;
+        border-radius: 30px;
+        padding: 8px;
+        margin-right: 25px;
+        margin-left: 25px;
+        text-decoration: none;
+        font-size:25px;
 
     &.active{
-        background-color: transparent;
-        color: $blue;
+        background-color: $primary;
+        color: $white;
         border: 1px solid;
+        }
     }
-  }
 
-  a:hover{
-      background-color: $primary;
-      color: $blue;
-      text-decoration: none;
-  }
+    a:hover{
+        background-color: $primary;
+        color: $blue;
+        text-decoration: none;
+    }
 
-}
-
-.page-inner{
-    margin-top: 30px;
 }
 
 .shop-item{
@@ -50,12 +68,81 @@ body{
 }
 
 .inscription-form{
-    margin-top: 30px;
-    border: $blue solid;
-    border-radius: 10px;
-    padding: 20px;
+
+    .header{
+        text-align: center;
+        margin:20px;
+        font-size: 30px;
+        font-style: italic;
+    }
 }
 
 .fa-2x{
     font-size: 18px;
+}
+
+.location-map{
+    border-radius: 20px;
+}
+
+.countdown{
+    text-align: center;
+    padding: 20px;
+    background-color: $background-color;
+    border-radius: 20px;
+
+    .countdown-element{
+        display: inline-block;
+        margin-right: 20px;
+        margin-left: 20px;
+        text-align: center;
+        font-style: italic;
+
+        .countdown-label{
+            font-size: 10px;
+        }
+        .countdown-value{
+            font-size: 30px;
+        }
+    }
+}
+
+.full-width{
+    width: 100%;
+}
+
+.map{
+    min-height: 200px;
+}
+
+
+
+.img-container{
+    margin: 20px;
+    text-align: center;
+
+    .img-text{
+        margin-top: 10px;
+        font-size:20px;
+        font-style: italic;
+    }
+}
+
+.img-separator{
+    color: $background-color;
+    font-size:70px;
+    font-style: italic;
+    text-align: center;
+    
+    @media (min-device-width:768px){
+        transform: translateY(50%);
+    }
+}
+
+.img-rounded{
+    border-radius: 20px;
+}
+
+.text-block{
+    padding: 25px;
 }

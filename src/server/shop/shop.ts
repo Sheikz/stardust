@@ -33,6 +33,17 @@ export function setupShop(app: Express){
         });
     })
 
+    app.patch('/api/shop/:itemId', (request, response) => {
+        let id = request.params.itemId;
+        let quantity = request.body.quantity;
+        if (!quantity)
+            return;
+
+        incrementItemQuantity(id, quantity)
+        .then(result => response.json(result))
+        .catch(err => response.status(500).json({error: err}));
+    })
+
     app.delete('/api/shop/:itemId', (request, response) => {
         let id = request.params.itemId;
         console.log('deleting item', request.params.itemId);
@@ -59,10 +70,23 @@ export function setupShop(app: Express){
         [data.from, price, JSON.stringify(cart)])
         .then(result => {
             response.sendStatus(200);
+            cart.forEach(item => {
+                incrementItemQuantity(item.id, -1* item.quantity)
+            })
         })
         .catch(err => {
             console.log('error while doing checkout', err);
             response.status(500).json({error: err});
         })
     });
+}
+
+function setItemQuantity(id: number, quantity: number){
+    quantity = quantity <= 0 ? 0 : quantity;
+    return Database.executeQuery("UPDATE shop_item set quantity = $1 where id = $2", [quantity, id]);
+}
+
+function incrementItemQuantity(id: number, quantity: number){
+    console.log('increment item quantity', {id: id, quantity :quantity});
+    return Database.executeQuery("UPDATE shop_item set quantity = GREATEST(0, quantity + $1) where id = $2", [quantity, id]);
 }

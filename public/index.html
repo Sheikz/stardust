@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico|Cabin" rel="stylesheet">
     <link rel="stylesheet" href="base.css" >
     <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body class="container" ng-app="app">
-    
-    <div class="menu">
-      <a ui-sref="info" ui-sref-active="active">Info</a>
-      <a ui-sref="shop" ui-sref-active="active">Cadeaux!</a>
-      <a ui-sref="admin" ui-sref-active="active">Admin</a>
-      <a ui-sref="guests" ui-sref-active="active">Guests</a>
-    </div>
+  <body ng-app="app">
 
-    <div class="page-inner"></div>
-      <ui-view></ui-view>
+    <div class="menu">
+        <div class="menu-item"><a ui-sref="info" ui-sref-active="active">Info</a></div>
+        <div class="menu-item"><a ui-sref="shop" ui-sref-active="active">Cadeaux!</a></div>
+        <div class="menu-item"><a ui-sref="admin" ui-sref-active="active">Admin</a></div>
+        <div class="menu-item"><a ui-sref="guests" ui-sref-active="active">Guests</a></div>
+      </div>
+
+    <img src="/images/bali.jpg" ng-show="'info' | isState" class="img-responsive header-image">
+
+    <div class="">
+
+      <div class="page-inner">
+        <ui-view></ui-view>
+      </div>
+
+      <banner-bottom></banner-bottom>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
 

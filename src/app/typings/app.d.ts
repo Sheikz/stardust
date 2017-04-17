@@ -6,6 +6,7 @@ declare module 'app' {
         description: string,
         price: number,
         image: string,
+        quantity: number,
     }
 
     interface ICartItem extends IShopItem{
@@ -16,4 +17,8 @@ declare module 'app' {
         name: string,
         dinner: boolean,
     }
+}
+
+interface Number {
+    toFixedDigit : (nbrOfDigits: number) => string;
 }

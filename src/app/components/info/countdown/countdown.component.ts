@@ -1,6 +1,3 @@
-import * as moment from 'moment';
-
-const weddingMoment = moment(new Date(2017, 9, 15, 16));
 
 class Controller {
 
@@ -9,7 +6,7 @@ class Controller {
     public minutes : number;
     public seconds : number;
 
-    private weddingMoment : moment.Moment;
+    private secondsToWedding : number;
 
     constructor(
         private $scope: ng.IScope
@@ -22,16 +19,24 @@ class Controller {
     }
 
     private startCountdown(){
+        let wDate = new Date(2017, 7, 25, 16).getTime();
+        let now = Date.now()
+        this.secondsToWedding = Math.floor((wDate - now)/1000);
         setInterval(() => this.refreshCountdown(), 1000);
     }
 
     private refreshCountdown(){
-        this.days = weddingMoment.diff(moment(), 'days');
-        this.hours = weddingMoment.diff(moment(), 'hours') - this.days * 24;
-        this.minutes = weddingMoment.diff(moment(), 'minutes') - this.days * 24*60 - this.hours * 60;
-        this.seconds = weddingMoment.diff(moment(), 'seconds') - this.days * 24*60*60 - this.hours *60*60 - this.minutes*60;
+        this.secondsToWedding--;
+        this.seconds = this.secondsToWedding;
+        this.minutes = Math.floor(this.secondsToWedding / 60) % 60;
+        this.hours = Math.floor(this.secondsToWedding / 60 / 60) % 24;
+        this.days = Math.floor(this.secondsToWedding / 60 / 60 / 24);
         this.$scope.$applyAsync();
     }
+}
+
+export function toFixedDigit() {
+    return (input) => ('0' + input).slice(-2);
 }
 
 export let CountdownComponent : ng.IComponentOptions = {

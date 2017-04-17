@@ -1,3 +1,34 @@
-<div>
-    {{$ctrl.days}} Jours, {{$ctrl.hours}}:{{$ctrl.minutes}}:{{$ctrl.seconds}}
+<div class="countdown">
+    <div class="countdown-element">
+        <div class="countdown-value">
+            {{$ctrl.days}}
+        </div>
+        <div class="countdown-label">
+            days
+        </div>
+    </div>
+    <div class="countdown-element">
+        <div class="countdown-value">
+            {{$ctrl.hours | toFixedDigit}}
+        </div>
+        <div class="countdown-label">
+            hours
+        </div>
+    </div>
+    <div class="countdown-element">
+        <div class="countdown-value">
+            {{$ctrl.minutes | toFixedDigit}}
+        </div>
+        <div class="countdown-label">
+            minutes
+        </div>
+    </div>
+    <div class="countdown-element">
+        <div class="countdown-value">
+            {{$ctrl.seconds | toFixedDigit}}
+        </div>
+        <div class="countdown-label">
+            seconds
+        </div>
+    </div>
 </div>

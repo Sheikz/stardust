@@ -19,15 +19,21 @@ class Controller{
         if (existingItem)
             existingItem.quantity++;
         else{
-            let newItem = this.item as ICartItem;
+            let newItem = _.clone(this.item) as ICartItem;
             newItem.quantity = 1;
             this.cart.push(newItem);
         }
+        this.item.quantity--;
     }
 
     deleteItem(){
         this.Shop.deleteItem(this.item)
         .then(() => this.$rootScope.$emit('REFRESH'));
+    }
+
+    updateItem(value : number){
+        this.Shop.updateItem(this.item, value)
+        this.item.quantity += value
     }
 }
 

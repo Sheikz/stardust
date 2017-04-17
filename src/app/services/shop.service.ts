@@ -16,15 +16,19 @@ export class ShopService{
     return this.$http.get('api/shop')
   }
 
-  public addItem(item : IShopItem){
+  addItem(item : IShopItem){
     return this.$http.post('api/shop', item);
   }
 
-  public deleteItem(item : IShopItem){
+  deleteItem(item : IShopItem){
     return this.$http.delete(`api/shop/${item.id}`);
   }
 
-  public checkout(checkoutData : any){
+  updateItem(item, value){
+    return this.$http.patch(`api/shop/${item.id}`, {quantity: value});
+  }
+
+  checkout(checkoutData : any){
     return this.$http.post('api/shop/checkout', checkoutData);
   }
 }
