@@ -1,7 +1,12 @@
-<div ng-controller="shopController as $ctrl">
+<div class="container-fluid" ng-controller="shopController as $ctrl">
 
   <h3>Liste de mariage</h3>
-  <shop-items-display items="$ctrl.items" cart="$ctrl.cart"></shop-items-display>
-  <shop-cart cart="$ctrl.cart"></shop-cart>
+  <div class="row">
+    <div class="col-sm-9">
+      <shop-items-display items="$ctrl.items" cart="$ctrl.cart"></shop-items-display>
+    </div>
+    <div class="col-sm-3">
+      <shop-cart cart="$ctrl.cart"></shop-cart>
+    </div>
 
 </div>

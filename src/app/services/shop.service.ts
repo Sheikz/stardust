@@ -1,4 +1,3 @@
-import {shopItems} from './shop-items.fixture';
 import { IShopItem, ICartItem } from 'app';
 import * as _ from "lodash";
 
