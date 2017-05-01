@@ -1,18 +1,19 @@
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <form class="inscription-form form-horizontal" name="form">
-            <h3>
-                Will you attend?
-            </h3>
+    <div class="col-md-8 col-md-offset-2">
+        <form id="registerForm" class="inscription-form form-horizontal" name="form">
+            <h3 translate="register_title"></h3>
+            <div ng-show="$ctrl.success">
+                <div class="alert alert-success alert-dismissible" role="alert" translate="register_success"></div>
+            </div>
             <div class="form-group">
-                <label class="col-xs-2 control-label">Nom</label>
-                <div class="col-xs-6">
-                    <input type="text" class="form-control" required ng-model="$ctrl.name">
+                <label class="col-xs-2 control-label" translate="register_name"></label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" required ng-model="$ctrl.register.name">
                 </div>
             </div>
-            <div ng-repeat="guest in $ctrl.guests track by $index" class="form-group has-feedback">
-                <label class="col-xs-2 control-label">Nom</label>
-                <div class="col-xs-6">
+            <div ng-repeat="guest in $ctrl.register.guests track by $index" class="form-group has-feedback">
+                <label class="col-xs-2 control-label" translate="register_name"></label>
+                <div class="col-xs-8">
                     <input type="text" class="form-control" required ng-model="guest.name">
                 </div>
                 <div class="col-xs-2">
@@ -22,31 +23,19 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <a class="btn btn-success" ng-click="$ctrl.addGuest()">Ajouter un invité</a>
+                    <a class="btn btn-success" ng-click="$ctrl.addGuest()" translate="register_add_guest"></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-2 control-label" translate="register_note"></label>
+                <div class="col-xs-8">
+                    <textarea row="3" ng-model="$ctrl.register.note" class="form-control"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                            <input ng-model="$ctrl.dinner" type="checkbox"> Nous venons au dîner
-                        </label>
-                    </div>
+                    <button class="btn btn-primary" ng-click="$ctrl.subscribe()" translate="register_button" ng-disabled="form.$invalid"></button>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="col-xs-2 control-label">Note</label>
-                <div class="col-xs-6">
-                    <textarea row="2" ng-model="$ctrl.note" class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" ng-click="$ctrl.subscribe()" ng-disabled="form.$invalid">Subscribe</button>
-                </div>
-            </div>
-            <div ng-show="$ctrl.success">
-                <div class="alert alert-success alert-dismissible" role="alert">Merci, nous avons bien reçu votre inscription!</div>
             </div>
         </form>
     </div>

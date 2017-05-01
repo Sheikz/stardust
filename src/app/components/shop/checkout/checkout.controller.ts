@@ -28,7 +28,7 @@ export class CheckoutController{
         this.Shop.checkout({
             from: this.name,
             comment: this.comment,
-            cart: this.cart
+            cart: this.cart,
         });
     }
 

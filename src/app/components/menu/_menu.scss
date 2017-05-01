@@ -1,0 +1,46 @@
+
+.navbar{
+
+    border-bottom: 1px solid $blue;
+    background-color: white;
+    font-family: 'Pacifico', cursive;
+
+    li{
+
+        &.language{
+            float:right;
+        }
+    }
+
+    .mobile-lang{
+        float:right;
+        padding:15px;
+        
+        @media (min-width: 768px){
+            display: none;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        font-size:22px;
+        color: $primary !important;
+
+    &.active{
+        color: $third !important;
+        }
+    }
+
+    a:hover{
+        color: #6cebec !important;
+        text-decoration: none;
+    }
+
+    .navbar-toggle{
+        border-color: $third;
+    }
+
+    .icon-bar{
+        background-color: $primary !important;
+    }
+}

@@ -3,7 +3,9 @@ import {IShopItem, ICartItem} from 'app';
 
 export class ShopController{
 
-  public items : IShopItem[];
+  public florenceItems : IShopItem[];
+  public mauritiusItems : IShopItem[];
+  public firstFlorenceItems : IShopItem[];
   public cart : ICartItem[];
 
   constructor(
@@ -19,9 +21,13 @@ export class ShopController{
 
   getItems(){
     this.Shop.getItems()
-    .then(items => {
-      this.items = items
-      console.log('items', this.items);
+    .then((items : IShopItem[]) => {
+      this.florenceItems = items.filter(item => item.category == 'florence');
+      this.mauritiusItems = items.filter(item => item.category == 'mauritius');
+      this.firstFlorenceItems = this.florenceItems.splice(0, 3);
+      console.log('first', this.firstFlorenceItems);
+      console.log('florence', this.florenceItems);
+      console.log('mauritius', this.mauritiusItems);
     });
   }
 }

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" ng-click="$ctrl.isNavCollapsed = !$ctrl.isNavCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript://" class="navbar-brand mobile-lang" ng-class="{active: $ctrl.language == 'fr'}" ng-click="$ctrl.setLanguage('fr')">fr</a>
+            <a href="javascript://" class="navbar-brand mobile-lang" ng-class="{active: $ctrl.language == 'en'}" ng-click="$ctrl.setLanguage('en')">en</a>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" uib-collapse="$ctrl.isNavCollapsed">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="info" ui-sref-active="active" translate="menu_home"></a></li>
+                <li><a ui-sref="info({name: 'info', '#': 'registerForm'})" translate="menu_register"></a></li>
+                <li><a ui-sref="shop" ui-sref-active="active" translate="menu_gifts"></a></li>
+                <li ng-if="$ctrl.admin" uib-dropdown><a href="javascript://" uib-dropdown-toggle>Admin <span class="caret"></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li><a ui-sref="admin" ui-sref-active="active">Shop</a></li>
+                        <li><a ui-sref="guests" ui-sref-active="active">Guests</a></li>
+                        <li><a ui-sref="checkoutAdmin" ui-sref-active="active">Checkout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript://" ng-class="{active: $ctrl.language == 'en'}" ng-click="$ctrl.setLanguage('en')">English</a></li>
+                <li><a href="javascript://" ng-class="{active: $ctrl.language == 'fr'}" ng-click="$ctrl.setLanguage('fr')">Français</a></li>
+            </ul>
+        </div>
+            <!--<span class="menu-item"><a ui-sref="info" ui-sref-active="active" translate="menu_home"></a></span>
+            <span class="menu-item"><a ui-sref="info({name: 'info', '#': 'registerForm'})" translate="menu_register"></a></span>
+            <span class="menu-item"><a ui-sref="shop" ui-sref-active="active" translate="menu_gifts"></a></span>
+            <span class="menu-item"><a ui-sref="admin" ui-sref-active="active">Admin</a></span>
+            <span class="menu-item"><a ui-sref="guests" ui-sref-active="active">Guests</a></span>-->
+            <!--<span class="menu-item language"><a href="javascript://" ng-class="{active: $ctrl.language == 'fr'}" ng-click="$ctrl.setLanguage('fr')">Français</a></span>
+            <span class="menu-item language"><a href="javascript://" ng-class="{active: $ctrl.language == 'en'}" ng-click="$ctrl.setLanguage('en')">English</a></span>-->
+        </div>
+    </div>
+</nav>

@@ -1,9 +1,9 @@
-import {GuestsService} from './../../../services/guests.service';
+import { GuestsService } from './../../../services/guests.service';
+import { IRegisterEntry } from "app";
 
 class Controller {
 
-    public name : string;
-    public dinner: boolean = true;
+    public register : IRegisterEntry = {};
     public success : boolean = false;
 
     public guests : any[] = [];
@@ -18,26 +18,27 @@ class Controller {
     }
 
     private init(){
-        this.guests = [];
-        this.name = '';
-        this.dinner = true;
+        this.register.guests = [];
+        this.register.name = '';
+        this.register.note = '';
     }
 
     addGuest(){
-        this.guests.push({name: ''});
+        this.register.guests.push({name: ''});
     }
 
     removeGuest(guest){
-        this.guests.splice(this.guests.indexOf(guest), 1);
+        this.register.guests.splice(this.register.guests.indexOf(guest), 1);
     }
 
     subscribe(){
-        console.log('subscribe', {name: this.name, dinner: this.dinner, guests: this.guests});
-        this.Guests.register(this.name, this.dinner, this.guests)
+        console.log('subscribe', this.register);
+        this.Guests.register(this.register)
         .then(response => {
             this.success = true;
             this.init();
         })
+
     }
 }
 

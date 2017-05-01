@@ -1,8 +1,6 @@
-import {pool} from './../server';
-import {Config} from './../config/config';
 import {IShopItem, ICartItem} from 'app';
 import { Express } from "@types/express";
-import * as Database from '../services/database';
+import * as Database from '../../services/database';
 import * as _ from 'lodash';
 
 export function setupShop(app: Express){
@@ -22,8 +20,8 @@ export function setupShop(app: Express){
         let data : IShopItem = request.body;
         console.log('adding item', data);
 
-        Database.executeQuery('INSERT INTO shop_item (name, description, price, quantity, image) VALUES ($1, $2, $3, $4, $5)',
-        [data.name, data.description, data.price, data.quantity, data.image])
+        Database.executeQuery('INSERT INTO shop_item (name, description, price, quantity, image, category) VALUES ($1, $2, $3, $4, $5, $6)',
+        [data.name, data.description, data.price, data.quantity, data.image, data.category])
         .then(result => {
             response.json(result);
         })
@@ -33,7 +31,7 @@ export function setupShop(app: Express){
         });
     })
 
-    app.patch('/api/shop/:itemId', (request, response) => {
+    app.patch('/api/shop/:itemId/quantity', (request, response) => {
         let id = request.params.itemId;
         let quantity = request.body.quantity;
         if (!quantity)
@@ -42,6 +40,17 @@ export function setupShop(app: Express){
         incrementItemQuantity(id, quantity)
         .then(result => response.json(result))
         .catch(err => response.status(500).json({error: err}));
+    })
+
+    app.patch('/api/shop/:itemId', (request, response) => {
+        let id = request.params.itemId;
+        let item : IShopItem = request.body;
+
+        console.log('update item', item);
+        let values = [id, item.name, item.description, item.image, item.price, item.quantity, item.category];
+        Database.executeQuery('UPDATE shop_item set name=$2, description=$3, image=$4, price=$5, quantity=greatest(0,$6), category=$7 where id = $1', values)
+        .catch(err => response.status(500).json({error: err}))
+        .then(result => response.json(result))
     })
 
     app.delete('/api/shop/:itemId', (request, response) => {
@@ -66,8 +75,8 @@ export function setupShop(app: Express){
         let price = _.reduce(cart, (a, b) => a + b.price * b.quantity , 0);
 
         console.log('Got checkout', data);
-        Database.executeQuery("INSERT INTO checkout (name, price, cart) VALUES ($1, $2, $3)",
-        [data.from, price, JSON.stringify(cart)])
+        Database.executeQuery("INSERT INTO checkout (name, price, cart, comment) VALUES ($1, $2, $3, $4)",
+        [data.from, price, JSON.stringify(cart), data.comment])
         .then(result => {
             response.sendStatus(200);
             cart.forEach(item => {
@@ -79,11 +88,13 @@ export function setupShop(app: Express){
             response.status(500).json({error: err});
         })
     });
-}
 
-function setItemQuantity(id: number, quantity: number){
-    quantity = quantity <= 0 ? 0 : quantity;
-    return Database.executeQuery("UPDATE shop_item set quantity = $1 where id = $2", [quantity, id]);
+    app.get('/api/shop/checkout', (request, response) => {
+        Database.executeQuery("SELECT * from checkout")
+        .then(result => {
+            response.json(result.rows);
+        })
+    })
 }
 
 function incrementItemQuantity(id: number, quantity: number){

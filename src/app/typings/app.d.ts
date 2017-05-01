@@ -7,6 +7,7 @@ declare module 'app' {
         price: number,
         image: string,
         quantity: number,
+        category: "mauritius" | "florence",
     }
 
     interface ICartItem extends IShopItem{
@@ -16,6 +17,12 @@ declare module 'app' {
     interface IGuest {
         name: string,
         dinner: boolean,
+    }
+
+    interface IRegisterEntry {
+        name?: string, 
+        guests?: any[],
+        note?: string,
     }
 }
 

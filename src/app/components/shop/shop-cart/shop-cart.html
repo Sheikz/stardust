@@ -1,7 +1,6 @@
 <div class="cart">
-    <h3>Liste de cadeaux</h3>
-    <div ng-show="$ctrl.cart.length == 0">
-        Votre liste est vide
+    <h3 translate="cart_title"></h3>
+    <div translate="cart_empty" ng-show="$ctrl.cart.length == 0">
     </div>
     <div ng-hide="$ctrl.cart.length == 0">
         <ul>
@@ -9,9 +8,10 @@
                 {{item.name}} x{{item.quantity}}
             </li>
         </ul>
-        <strong>Prix total:</strong> {{$ctrl.getTotal()}} €
+        <strong translate="cart_total"></strong> {{$ctrl.getTotal()}} €
         <div>
-            <button class="btn btn-primary" ui-sref="checkout({cart: $ctrl.cart})"><span class="glyphicon glyphicon-shopping-cart"></span> Envoyer</button>
+            <button class="btn btn-primary" ui-sref="checkout({cart: $ctrl.cart})"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;<span translate="cart_checkout"></span></button>
+            <button class="btn btn-danger pull-right" ng-click="$ctrl.cancel()"><span class="glyphicon glyhipcon-cancel"></span>&nbsp;<span translate="cart_reset"></span></button>
         </div>
     </div>
 </div>

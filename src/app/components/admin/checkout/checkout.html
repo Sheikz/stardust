@@ -1,0 +1,22 @@
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>De</th>
+            <th>Valeur</th>
+            <th>Commentaire</th>
+            <th>Cadeau</th>
+        </tr>
+        <tr ng-repeat="gift in $ctrl.gifts track by $index">
+            <td>{{$index+1}}</td>
+            <td>{{gift.name}}</td>
+            <td>{{gift.price}}</td>
+            <td>{{gift.comment}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="item in gift.cart">{{item.name}}: {{item.price}} €: x{{item.quantity}}</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>

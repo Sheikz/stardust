@@ -1,12 +1,32 @@
 <div class="container-fluid" ng-controller="shopController as $ctrl">
 
-  <h3>Liste de mariage</h3>
+  <h3 translate="gifts_title"></h3>
+  <h2 translate="gifts_florence"></h2>
+  <!-- First row with the 3 first florence items -->
   <div class="row">
-    <div class="col-sm-9">
-      <shop-items-display items="$ctrl.items" cart="$ctrl.cart"></shop-items-display>
+    <div class="col-sm-3" ng-repeat="item in $ctrl.firstFlorenceItems">
+      <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
     </div>
     <div class="col-sm-3">
       <shop-cart cart="$ctrl.cart"></shop-cart>
     </div>
+  </div>
+  <!-- Rest of Florence items -->
+  <div class="row" ng-repeat="items in $ctrl.florenceItems | groupBy:4">
+    <div class="col-sm-3" ng-repeat="item in items">
+      <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
+    </div>
+  </div>
+
+  <hr>
+  <div>
+    <h2 translate="gifts_mauritius"></h2>
+    <!-- Mauritius items -->
+    <div class="row" ng-repeat="items in $ctrl.mauritiusItems | groupBy:4">
+      <div class="col-sm-3" ng-repeat="item in items">
+        <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
+      </div>
+    </div>
+  </div>
 
 </div>

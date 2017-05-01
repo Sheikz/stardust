@@ -23,12 +23,20 @@ export class ShopService{
     return this.$http.delete(`api/shop/${item.id}`);
   }
 
-  updateItem(item, value){
-    return this.$http.patch(`api/shop/${item.id}`, {quantity: value});
+  updateItem(item){
+    return this.$http.patch(`api/shop/${item.id}`, item);
   }
 
-  checkout(checkoutData : any){
+  updateItemQuantity(item, value){
+    return this.$http.patch(`api/shop/${item.id}/quantity`, {quantity: value});
+  }
+
+  checkout(checkoutData : any) : ng.IPromise<any>{
     return this.$http.post('api/shop/checkout', checkoutData);
+  }
+
+  getCheckoutItems(){
+    return this.$http.get('api/shop/checkout');
   }
 }
 

@@ -8,5 +8,12 @@ export const Config = {
         port: "",
         host: "",
         ssl: true
-    }
+    },
+
+    admins : [
+        {
+            name: '',
+            password: ''
+        }
+    ]
 }

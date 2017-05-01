@@ -3,6 +3,7 @@ import { InscriptionFormComponent } from './inscription-form/inscription-form.co
 import { CountdownComponent, toFixedDigit } from "./countdown/countdown.component";
 import { IntroComponent } from "./intro/intro.component";
 import { LocationComponent } from "./location/location.component";
+import { HoneymoonComponent } from "./honeymoon/honeymoon.component";
 
 angular.module('app')
     .component('inscriptionForm', InscriptionFormComponent)
@@ -10,4 +11,5 @@ angular.module('app')
     .component('countdown', CountdownComponent)
     .component('intro', IntroComponent)
     .component('location', LocationComponent)
+    .component('honeymoon', HoneymoonComponent)
     .filter('toFixedDigit', toFixedDigit);

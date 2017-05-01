@@ -7,6 +7,8 @@ class Controller{
     public item : IShopItem;
     public cart : ICartItem[];
 
+    public editing : boolean = false;
+
     constructor(
         private Shop : ShopService,
         private $rootScope : ng.IRootScopeService,
@@ -26,13 +28,22 @@ class Controller{
         this.item.quantity--;
     }
 
+    editItem(){
+        this.editing = true;
+    }
+
+    updateItem(){
+        this.editing = false;
+        this.Shop.updateItem(this.item);
+    }
+
     deleteItem(){
         this.Shop.deleteItem(this.item)
         .then(() => this.$rootScope.$emit('REFRESH'));
     }
 
-    updateItem(value : number){
-        this.Shop.updateItem(this.item, value)
+    updateItemQuantity(value : number){
+        this.Shop.updateItemQuantity(this.item, value)
         this.item.quantity += value
     }
 }

@@ -1,17 +1,27 @@
 <div class="shop-item">
   <img class="img-responsive item-image" ng-src="{{$ctrl.item.image}}">
-  <h4>{{$ctrl.item.name}}</h4>
+  <h4 ng-hide="$ctrl.editing">{{$ctrl.item.name}}</h4>
+  <h4 ng-show="$ctrl.editing"><input type="text" class="form-control" ng-model="$ctrl.item.name"></h4>
   <p>{{$ctrl.item.description}}</p>
+  <div ng-show="$ctrl.admin">
+    <button class="btn btn-primary" ng-hide="$ctrl.editing" ng-click="$ctrl.editItem()"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button class="btn btn-success" ng-show="$ctrl.editing" ng-click="$ctrl.updateItem()"><span class="glyphicon glyphicon-ok"></span></button>
+    <select ng-show="$ctrl.editing" class="form-control" ng-model="$ctrl.item.category">
+      <option value="florence">Florence</option>
+      <option value="mauritius">Mauritius</option>
+    </select>
+  </div>
+
   <div class="row">
     <div class="col-xs-6">
-      <span>Prix: <strong>{{$ctrl.item.price}} €</strong></span>
+      <span translate="gifts_price"></span><strong> {{$ctrl.item.price}} €</strong>
     </div>
     <div class="col-xs-6">
-      <span>Reste: <strong>{{$ctrl.item.quantity}}</strong></span>
+      <span translate="gifts_remaining"></span><strong> {{$ctrl.item.quantity}}</strong>
     </div>
   </div>
-  <button ng-show="!$ctrl.admin" ng-disabled="$ctrl.item.quantity <= 0" ng-click="$ctrl.addToCart()" class="btn btn-primary"><span class="glyphicon glyphicon-gift"></span> Offrir</button>
+  <button ng-show="!$ctrl.admin" ng-disabled="$ctrl.item.quantity <= 0" ng-click="$ctrl.addToCart()" class="btn btn-primary"><span class="glyphicon glyphicon-gift">&nbsp;<span translate="gifts_offer"></span></span></button>
   <button ng-show="$ctrl.admin" ng-click="$ctrl.deleteItem()" class="btn btn-danger">Delete</button>
-  <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItem(1)" class="btn btn-success"><span class="glyphicon glyphicon-plus"></button>
-  <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItem(-1)" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></button>
+  <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItemQuantity(1)" class="btn btn-success"><span class="glyphicon glyphicon-plus"></button>
+  <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItemQuantity(-1)" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></button>
 </div>

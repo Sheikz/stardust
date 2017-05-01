@@ -12,6 +12,10 @@ class Controller{
     getTotal(){
         return this.Shop.getTotal(this.cart);
     }
+
+    cancel(){
+        this.cart = [];
+    }
 }
 
 export let ShopCartComponent : ng.IComponentOptions = {

@@ -1,4 +1,4 @@
-import { IGuest } from "app";
+import { IGuest, IRegisterEntry } from "app";
 
 export class GuestsService {
 
@@ -8,12 +8,8 @@ export class GuestsService {
 
     }
 
-    register(name: string, dinner: boolean, guests: any[]){
-        return this.$http.post('api/register', {
-            name: name,
-            dinner: dinner,
-            guests: guests
-        });
+    register(register : IRegisterEntry){
+        return this.$http.post('api/register', register);
     }
 
     getGuestList() : ng.IPromise<IGuest[]>{

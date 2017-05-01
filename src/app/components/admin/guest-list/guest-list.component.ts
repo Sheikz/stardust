@@ -1,5 +1,6 @@
 import { GuestsService } from "../../../services/guests.service";
 import { IGuest } from "app";
+import { AuthService } from "../auth.service";
 
 class Controller {
 
@@ -8,9 +9,12 @@ class Controller {
 
     constructor(
         private Guests : GuestsService,
+        private Auth : AuthService,
     ){}
     
     $onInit(){
+        this.Auth.redirectIfNotAdmin();
+        
         this.Guests.getGuestList()
         .then(guests => {
             console.log('guests', guests);
