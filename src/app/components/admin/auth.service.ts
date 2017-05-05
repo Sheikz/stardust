@@ -1,5 +1,6 @@
 export class AuthService {
 
+    /* @ngInject */
     constructor(
         private $http : ng.IHttpService,
         private $window: ng.IWindowService,

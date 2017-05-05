@@ -8,6 +8,7 @@ export class CheckoutController{
     public name : string;
     public comment : string;
 
+    /* @ngInject */
     constructor(
         private $stateParams: ng.ui.IStateParamsService,
         private Shop: ShopService

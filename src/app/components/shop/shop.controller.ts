@@ -8,6 +8,7 @@ export class ShopController{
   public firstFlorenceItems : IShopItem[];
   public cart : ICartItem[];
 
+  /* @ngInject */
   constructor(
     private $http : ng.IHttpService, 
     private Shop : ShopService,

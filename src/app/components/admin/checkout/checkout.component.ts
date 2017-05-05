@@ -4,6 +4,7 @@ class Controller {
 
     public gifts;
 
+    /* @ngInject */
     constructor(
         private Shop : ShopService
     )

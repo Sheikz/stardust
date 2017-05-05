@@ -10,6 +10,7 @@ export class ShopAdminController {
 
   public newItem : IShopItem;
 
+  /* @ngInject */
   constructor(
     private $http : ng.IHttpService, 
     private Shop : ShopService,

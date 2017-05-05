@@ -2,6 +2,7 @@ import { IGuest, IRegisterEntry } from "app";
 
 export class GuestsService {
 
+    /* @ngInject */
     constructor(
         private $http: ng.IHttpService
     ){

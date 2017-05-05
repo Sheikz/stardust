@@ -8,6 +8,7 @@ class Controller {
 
     public guests : any[] = [];
 
+    /* @ngInject */
     constructor(
         private Guests : GuestsService
     )

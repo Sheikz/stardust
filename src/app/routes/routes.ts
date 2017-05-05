@@ -1,4 +1,4 @@
-let config = function($stateProvider : ng.ui.IStateProvider, $locationProvider: ng.ILocationProvider, $urlRouterProvider : ng.ui.IUrlRouterProvider){
+let config = /* @ngInject */ function($stateProvider : ng.ui.IStateProvider, $locationProvider: ng.ILocationProvider, $urlRouterProvider : ng.ui.IUrlRouterProvider){
 
   let states : ng.ui.IState[] = [
     {

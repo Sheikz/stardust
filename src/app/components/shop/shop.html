@@ -22,8 +22,13 @@
   <div>
     <h2 translate="gifts_mauritius"></h2>
     <!-- Mauritius items -->
-    <div class="row" ng-repeat="items in $ctrl.mauritiusItems | groupBy:4">
+    <!--<div class="row" ng-repeat="items in $ctrl.mauritiusItems | groupBy:4">
       <div class="col-sm-3" ng-repeat="item in items">
+        <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
+      </div>
+    </div>-->
+    <div class="gifts_container">
+      <div class="gift" ng-repeat="item in $ctrl.mauritiusItems">
         <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
       </div>
     </div>

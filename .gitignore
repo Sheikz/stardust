@@ -2,7 +2,7 @@
 node_modules
 *.log
 .env
-config.ts
+src/server/config/config.ts
 dist/
 *.min.js
 base.css

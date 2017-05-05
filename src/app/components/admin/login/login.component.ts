@@ -5,6 +5,7 @@ class Controller {
     public name : string;
     public password: string;
 
+    /* @ngInject */
     constructor(
         private Auth : AuthService
     )

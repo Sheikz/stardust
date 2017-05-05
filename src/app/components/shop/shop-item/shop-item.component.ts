@@ -9,6 +9,7 @@ class Controller{
 
     public editing : boolean = false;
 
+    /* @ngInject */
     constructor(
         private Shop : ShopService,
         private $rootScope : ng.IRootScopeService,

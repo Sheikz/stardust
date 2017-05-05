@@ -8,6 +8,7 @@ class Controller {
 
     private secondsToWedding : number;
 
+    /* @ngInject */
     constructor(
         private $scope: ng.IScope
     ){}

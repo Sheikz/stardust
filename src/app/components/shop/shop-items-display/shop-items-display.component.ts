@@ -1,7 +1,4 @@
 class Controller{
-  $onInit(){
-
-  }
 }
 
 export let ShopItemsDisplay : ng.IComponentOptions = {

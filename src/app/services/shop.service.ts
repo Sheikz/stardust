@@ -3,6 +3,7 @@ import * as _ from "lodash";
 
 export class ShopService{
 
+  /* @ngInject */
   constructor (private $http : ng.IHttpService, private $q : ng.IQService){
 
   }

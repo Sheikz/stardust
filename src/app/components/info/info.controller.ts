@@ -1,6 +1,3 @@
 export class InfoController {
 
-    $onInit(){
-    }
-
 }

@@ -7,6 +7,7 @@ class Controller {
     public guests : IGuest[];
     public guestNumber : number = 1;
 
+    /* @ngInject */
     constructor(
         private Guests : GuestsService,
         private Auth : AuthService,

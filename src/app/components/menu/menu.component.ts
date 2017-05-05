@@ -6,6 +6,7 @@ class Controller {
     public isNavCollapsed : boolean = true;
     public admin : boolean = false;
 
+    /* @ngInject */
     constructor(
         private $translate : angular.translate.ITranslateService,
         private Auth : AuthService)

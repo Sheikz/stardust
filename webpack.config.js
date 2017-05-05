@@ -1,5 +1,8 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var extractCSS = new ExtractTextPlugin('./public/[name].css');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin('./public/[name].css');
+const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -14,7 +17,9 @@ module.exports = {
       extensions: [".webpack.js", ".web.js", ".ts", ".js", ".css", ".scss"]
   },
   plugins : [
-    extractCSS
+    new ngAnnotatePlugin({add: true}),
+    extractCSS,
+    new UglifyJSPlugin(),
   ],
   module: {
     loaders: [
