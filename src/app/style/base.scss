@@ -3,5 +3,8 @@
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 @import "style";
+@import "colors";
 @import "../components/menu/menu";
 @import "../components/shop/shop";
+@import "../components/info/honeymoon/honeymoon";
+@import "../components/info/inscription-form/inscription-form";

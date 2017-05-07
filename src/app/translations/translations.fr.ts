@@ -6,6 +6,9 @@ export const frenchTranslations = {
     countdown_hours: "heures",
     countdown_minutes: "minutes",
     countdown_seconds: "secondes",
+    location_text: "Notre mariage se déroulera au Relais des rêves, une ferme enchanteresse située dans le coeur du Brabant Wallon.",
+    location_hotel_title: "Les hotels à proximité:",
+    location_hotel_text: " - {{time}} minutes en voiture - {{price}}€",
     gifts_title: "Liste de Mariage",
     gifts_florence: "Florence",
     gifts_mauritius: "Île Maurice",
@@ -34,4 +37,5 @@ export const frenchTranslations = {
     honeymoon_florence_title: "Florence",
     honeymoon_mauritius_title: "Île Maurice",
     honeymoon_title: "Notre lune de miel",
+    honeymoon_text: "Parce que les voyages nous ont aimés, parce que nous les avons aimés en retour, parce qu'ils nous ont rapprochés, passionés, et qu'à chaque voyage nous nous sommes découvert des petits bouts de nous, que nous avons aimé encore plus fort"
 }

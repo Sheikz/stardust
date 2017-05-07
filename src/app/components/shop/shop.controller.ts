@@ -25,10 +25,7 @@ export class ShopController{
     .then((items : IShopItem[]) => {
       this.florenceItems = items.filter(item => item.category == 'florence');
       this.mauritiusItems = items.filter(item => item.category == 'mauritius');
-      this.firstFlorenceItems = this.florenceItems.splice(0, 3);
-      console.log('first', this.firstFlorenceItems);
-      console.log('florence', this.florenceItems);
-      console.log('mauritius', this.mauritiusItems);
+      //this.firstFlorenceItems = this.florenceItems.splice(0, 3);
     });
   }
 }

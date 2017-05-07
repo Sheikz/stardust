@@ -6,6 +6,9 @@ export const englishTranslations = {
     countdown_hours: "hours",
     countdown_minutes: "minutes",
     countdown_seconds: "seconds",
+    location_text: "Our wedding will happen at the Relais des Rêves, an enchanting renovated farm located in the heart of the Brabant Wallon",
+    location_hotel_title: "Hotels in the viscinity: ",
+    location_hotel_text: " - {{time}} minutes by car - {{price}}€",
     gifts_title: "Wedding List",
     gifts_florence: "Florence",
     gifts_mauritius: "Mauritius",
@@ -34,5 +37,5 @@ export const englishTranslations = {
     honeymoon_florence_title: "Florence",
     honeymoon_mauritius_title: "Mauritius",
     honeymoon_title: "Our honeymoon",
-
+    honeymoon_text: "Because travels have loved us, because we loved them in return, because they brought us closer together, passionate, and that on each journey we discovered little bits of ourselves that we loved even more strongly"
 }

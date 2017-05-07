@@ -14,14 +14,14 @@
 
   <div class="row">
     <div class="col-xs-6">
-      <span translate="gifts_price"></span><strong> {{$ctrl.item.price}} €</strong>
+      <button ng-show="!$ctrl.admin" ng-disabled="$ctrl.item.quantity <= 0" ng-click="$ctrl.addToCart()" class="btn btn-primary"><span class="glyphicon glyphicon-gift">&nbsp;<span translate="gifts_offer"></span></span></button>
+      <button ng-show="$ctrl.admin" ng-click="$ctrl.deleteItem()" class="btn btn-danger">Delete</button>
+      <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItemQuantity(1)" class="btn btn-success"><span class="glyphicon glyphicon-plus"></button>
+      <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItemQuantity(-1)" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></button>
     </div>
     <div class="col-xs-6">
+      <span translate="gifts_price"></span><strong> {{$ctrl.item.price}} €</strong>
       <span translate="gifts_remaining"></span><strong> {{$ctrl.item.quantity}}</strong>
     </div>
   </div>
-  <button ng-show="!$ctrl.admin" ng-disabled="$ctrl.item.quantity <= 0" ng-click="$ctrl.addToCart()" class="btn btn-primary"><span class="glyphicon glyphicon-gift">&nbsp;<span translate="gifts_offer"></span></span></button>
-  <button ng-show="$ctrl.admin" ng-click="$ctrl.deleteItem()" class="btn btn-danger">Delete</button>
-  <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItemQuantity(1)" class="btn btn-success"><span class="glyphicon glyphicon-plus"></button>
-  <button ng-show="$ctrl.admin" ng-click="$ctrl.updateItemQuantity(-1)" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></button>
 </div>
