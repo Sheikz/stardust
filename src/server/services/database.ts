@@ -2,8 +2,6 @@ import {Config} from './../config/config';
 import * as pg from 'pg';
 import { pool } from "../server";
 
-const dbURL = process.env.DATABASE_URL || Config.DATABASE_URL;
-
 const poolConfig : pg.PoolConfig = {
     user: Config.database.user,
     password: Config.database.password,
