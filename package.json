@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -w --color",
-    "build": "webpack --color",
-    "server": "tsc -p ./src/server",
+    "build": "./node_modules/.bin/webpack",
+    "server": "./node_modules/.bin/tsc -p ./src/server",
     "postinstall": "npm run server && npm run build",
     "watch-dev": "concurrently \"tsc -w -p ./src/server\" \"nodemon dist/server.js\" \"webpack -w --color\"",
     "start": "node dist/server.js"
