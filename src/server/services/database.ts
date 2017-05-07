@@ -12,6 +12,7 @@ const poolConfig : pg.PoolConfig = {
 }
 
 export function createPool() : pg.Pool{
+    console.log('creating pool', poolConfig);
     return new pg.Pool(poolConfig);
 }
 
