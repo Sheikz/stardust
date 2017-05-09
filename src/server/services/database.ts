@@ -2,17 +2,15 @@ import {Config} from './../config/config';
 import * as pg from 'pg';
 import { pool } from "../server";
 
-const poolConfig : pg.PoolConfig = {
-    user: Config.database.user,
-    password: Config.database.password,
-    database: Config.database.database,
-    host: Config.database.host,
-    ssl: Config.database.ssl,
-    port: Config.database.port
-}
-
 export function createPool() : pg.Pool{
-    console.log('creating pool', poolConfig);
+    let poolConfig : pg.PoolConfig = {
+        user: Config.database.user,
+        password: Config.database.password,
+        database: Config.database.database,
+        host: Config.database.host,
+        ssl: Config.database.ssl,
+        port: Config.database.port
+    }
     return new pg.Pool(poolConfig);
 }
 

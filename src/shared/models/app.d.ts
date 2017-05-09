@@ -11,13 +11,18 @@ declare module 'app' {
     }
 
     interface ICartItem extends IShopItem{
-        quantity: number;
     }
 
-    interface IRegisterEntry{
+    interface IGuest {
         name: string,
         dinner: boolean,
-        guests: [{name: string}];
-        note: string,
+    }
+
+    interface IRegisterEntry {
+        name?: string, 
+        guests?: any[],
+        note?: string,
+        joining?: boolean,
+        email?: string,
     }
 }

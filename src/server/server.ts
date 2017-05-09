@@ -7,6 +7,10 @@ import * as Database from "./services/database";
 import { setupGuests } from "./routes/guests/guests";
 import { setupAuth } from "./routes/auth/auth";
 
+require('dotenv').config()
+
+Config.init();
+
 let app = express();
 const PORT = process.env.PORT || 5000;
 

@@ -22,6 +22,8 @@ class Controller {
         this.register.guests = [];
         this.register.name = '';
         this.register.note = '';
+        this.register.email = '';
+        this.register.joining = true;
     }
 
     addGuest(){

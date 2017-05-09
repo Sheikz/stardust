@@ -10,13 +10,14 @@ export function setupAuth(app: Express) {
 
         let user = {name: name, password: password};
 
-        let admins = Config.admins;
-        let found = _.find(admins, admin => _.isEqual(admin, user));
+        // let admins = Config.admins;
+        // let found = _.find(admins, admin => _.isEqual(admin, user));
 
-        console.log('found', found);
-        if (found)
-            response.json({auth: 'OK'});
-        else
-            response.json({auth: 'NOK'});
+        // console.log('found', found);
+        // if (found)
+        //     response.json({auth: 'OK'});
+        // else
+        //     response.json({auth: 'NOK'});
+        response.json({auth: 'NOK'});
     })
 }
