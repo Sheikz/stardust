@@ -8,12 +8,12 @@ export function setupGuests(app: Express){
         let subscription : IRegisterEntry = request.body;
 
         let promises = [];
-        promises.push(Database.executeQuery('INSERT INTO subscription (name, note) VALUES ($1, $2)',
-            [subscription.name, subscription.note]));
+        promises.push(Database.executeQuery('INSERT INTO subscription (name, note, email, joining) VALUES ($1, $2, $3, $4)',
+            [subscription.name, subscription.note, subscription.email, subscription.joining]));
 
         subscription.guests.forEach(guest => {
-            promises.push(Database.executeQuery('INSERT INTO subscription (name, note) VALUES ($1, $2)',
-                [guest.name, subscription.note]));
+            promises.push(Database.executeQuery('INSERT INTO subscription (name, note, email, joining) VALUES ($1, $2, $3, $4)',
+                [guest.name, subscription.note, subscription.email, subscription.joining]));
         })
         Promise.all(promises)
         .then(result => {

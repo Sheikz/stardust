@@ -2,12 +2,14 @@
     <tr>
         <th>#</th>
         <th>Nom</th>
-        <th>Dîner?</th>
+        <th>Email</th>
+        <th>Joining?</th>
         <th>Note</th>
     </tr>
     <tr ng-repeat="guest in $ctrl.guests track by $index">
         <td>{{$index+1}}</td>
         <td>{{guest.name}}</td>
+        <td>{{guest.email}}</td>
         <td>{{guest.dinner ? 'Oui' : 'Non'}}</td>
         <td>{{guest.note}}</td>
     </tr>

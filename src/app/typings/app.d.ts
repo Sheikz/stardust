@@ -23,6 +23,8 @@ declare module 'app' {
         name?: string, 
         guests?: any[],
         note?: string,
+        joining?: boolean,
+        email?: string,
     }
 }
 
