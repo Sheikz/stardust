@@ -35,7 +35,6 @@ class Controller {
     }
 
     subscribe(){
-        console.log('subscribe', this.register);
         this.Guests.register(this.register)
         .then(response => {
             this.success = true;

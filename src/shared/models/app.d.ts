@@ -3,14 +3,11 @@ declare module 'app' {
     interface IShopItem{
         id?: number,
         name: string,
-        description: string,
+        name_french?: string,
         price: number,
-        image: string,
+        image?: string,
         quantity?: number,
-        category: "mauritius" | "florence",
-    }
-
-    interface ICartItem extends IShopItem{
+        category?: "mauritius" | "florence",
     }
 
     interface IGuest {
@@ -24,5 +21,10 @@ declare module 'app' {
         note?: string,
         joining?: boolean,
         email?: string,
+    }
+
+    interface AuthResult {
+        success: boolean,
+        token: string
     }
 }

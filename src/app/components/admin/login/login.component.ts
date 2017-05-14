@@ -1,9 +1,10 @@
-import { AuthService } from "../auth.service";
+import { AuthService } from "../../../services/auth.service";
 
 class Controller {
 
     public name : string;
     public password: string;
+    public success : string;
 
     /* @ngInject */
     constructor(
@@ -12,7 +13,11 @@ class Controller {
     {}
 
     login(){
-        this.Auth.login(this.name, this.password);
+        this.Auth.login(this.name, this.password)
+        .then(result => {
+            this.success = result ? 'success' : 'error';
+            console.log('success', this.success);
+        })
     }
 }
 

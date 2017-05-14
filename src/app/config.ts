@@ -20,6 +20,7 @@ function HttpConfig($httpProvider:ng.IHttpProvider) {
 function translationsLoader($translateProvider : angular.translate.ITranslateProvider){
     $translateProvider.translations('en', englishTranslations)
     $translateProvider.translations('fr', frenchTranslations)
+    $translateProvider.useSanitizeValueStrategy('escapeParameters');
     $translateProvider.preferredLanguage('en');
 }
 

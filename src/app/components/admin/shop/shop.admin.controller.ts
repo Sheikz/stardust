@@ -1,6 +1,6 @@
 import { IShopItem } from 'app';
 import { ShopService } from "../../../services/shop.service";
-import { AuthService } from "../auth.service";
+import { AuthService } from "../../../services/auth.service";
 
 export class ShopAdminController {
 
@@ -30,7 +30,6 @@ export class ShopAdminController {
     this.Shop.getItems()
     .then(items => {
       this.items = items;
-      console.log('items', this.items);
     })
   }
 

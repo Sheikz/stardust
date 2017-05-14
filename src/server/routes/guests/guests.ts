@@ -1,6 +1,7 @@
 import {Express} from '@types/express';
 import * as Database from '../../services/database';
 import { IRegisterEntry } from "app";
+import { verifyToken } from "../auth/auth";
 
 export function setupGuests(app: Express){
 
@@ -25,7 +26,7 @@ export function setupGuests(app: Express){
         })
     })
 
-    app.get('/api/guests', (request, response) => {
+    app.get('/api/guests', verifyToken, (request, response) => {
         Database.executeQuery('SELECT * from subscription')
         .then(result => {
             response.json(result.rows);

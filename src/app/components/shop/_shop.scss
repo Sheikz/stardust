@@ -8,3 +8,26 @@
 .gift{
     display: inline-block;
     margin: 0 0 1em;}
+
+.shop-item{
+    padding: 4px;
+    margin-bottom: 20px;
+    min-height:300px;
+
+    .item-image{
+        border-radius: 15px 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: white solid;
+    }
+}
+
+.cart{
+    border: $blue solid;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    h3{
+        margin-top: 0;
+    }
+}

@@ -1,6 +1,6 @@
 import { GuestsService } from "../../../services/guests.service";
 import { IGuest } from "app";
-import { AuthService } from "../auth.service";
+import { AuthService } from "../../../services/auth.service";
 
 class Controller {
 
@@ -18,7 +18,6 @@ class Controller {
         
         this.Guests.getGuestList()
         .then(guests => {
-            console.log('guests', guests);
             this.guests = guests;
         })
     }

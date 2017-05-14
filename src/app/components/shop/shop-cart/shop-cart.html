@@ -5,13 +5,17 @@
     <div ng-hide="$ctrl.cart.length == 0">
         <ul>
             <li ng-repeat="item in $ctrl.cart">
-                {{item.name}} x{{item.quantity}}
+                {{item.name}} - {{item.price}}€ x{{item.quantity}}
             </li>
         </ul>
-        <strong translate="cart_total"></strong> {{$ctrl.getTotal()}} €
-        <div>
-            <button class="btn btn-primary" ui-sref="checkout({cart: $ctrl.cart})"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;<span translate="cart_checkout"></span></button>
-            <button class="btn btn-danger pull-right" ng-click="$ctrl.cancel()"><span class="glyphicon glyhipcon-cancel"></span>&nbsp;<span translate="cart_reset"></span></button>
+        <div class="row">
+            <div class="col-xs-4">
+                <strong translate="cart_total"></strong> {{$ctrl.getTotal()}} €
+            </div>
+                <div class="col-xs-4 col-xs-offset-4">
+                <button class="btn btn-primary" ui-sref="checkout({cart: $ctrl.cart})"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;<span translate="cart_checkout"></span></button>
+                <button class="btn btn-danger pull-right" ng-click="$ctrl.cancel()"><span class="glyphicon glyhipcon-cancel"></span>&nbsp;<span translate="cart_reset"></span></button>
+            </div>
         </div>
     </div>
 </div>

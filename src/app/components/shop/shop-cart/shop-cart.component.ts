@@ -1,10 +1,10 @@
 import {ShopService} from './../../../services/shop.service';
-import {ICartItem} from 'app';
+import {IShopItem} from 'app';
 import * as _ from 'lodash';
 
 class Controller{
 
-    public cart : ICartItem[]
+    public cart : IShopItem[]
 
     /* @ngInject */
     constructor(private Shop: ShopService)

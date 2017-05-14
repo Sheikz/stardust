@@ -1,7 +1,8 @@
-import {IShopItem, ICartItem} from 'app';
+import {IShopItem} from 'app';
 import { Express } from "@types/express";
 import * as Database from '../../services/database';
 import * as _ from 'lodash';
+import { verifyToken } from "../auth/auth";
 
 export function setupShop(app: Express){
 
@@ -16,12 +17,12 @@ export function setupShop(app: Express){
         })
     });
 
-    app.post('/api/shop', (request, response) => {
+    app.post('/api/shop', verifyToken, (request, response) => {
         let data : IShopItem = request.body;
         console.log('adding item', data);
 
-        Database.executeQuery('INSERT INTO shop_item (name, description, price, quantity, image, category) VALUES ($1, $2, $3, $4, $5, $6)',
-        [data.name, data.description, data.price, data.quantity, data.image, data.category])
+        Database.executeQuery('INSERT INTO shop_item (name, name_french, price, quantity, image, category) VALUES ($1, $2, $3, $4, $5, $6)',
+        [data.name, data.name_french, data.price, data.quantity, data.image, data.category])
         .then(result => {
             response.json(result);
         })
@@ -31,7 +32,7 @@ export function setupShop(app: Express){
         });
     })
 
-    app.patch('/api/shop/:itemId/quantity', (request, response) => {
+    app.patch('/api/shop/:itemId/quantity', verifyToken, (request, response) => {
         let id = request.params.itemId;
         let quantity = request.body.quantity;
         if (!quantity)
@@ -42,18 +43,18 @@ export function setupShop(app: Express){
         .catch(err => response.status(500).json({error: err}));
     })
 
-    app.patch('/api/shop/:itemId', (request, response) => {
+    app.patch('/api/shop/:itemId', verifyToken, (request, response) => {
         let id = request.params.itemId;
         let item : IShopItem = request.body;
 
         console.log('update item', item);
-        let values = [id, item.name, item.description, item.image, item.price, item.quantity, item.category];
-        Database.executeQuery('UPDATE shop_item set name=$2, description=$3, image=$4, price=$5, quantity=greatest(0,$6), category=$7 where id = $1', values)
+        let values = [id, item.name, item.name_french, item.image, item.price, item.quantity, item.category];
+        Database.executeQuery('UPDATE shop_item set name=$2, name_french=$3, image=$4, price=$5, quantity=greatest(0,$6), category=$7 where id = $1', values)
         .catch(err => response.status(500).json({error: err}))
         .then(result => response.json(result))
     })
 
-    app.delete('/api/shop/:itemId', (request, response) => {
+    app.delete('/api/shop/:itemId', verifyToken, (request, response) => {
         let id = request.params.itemId;
         console.log('deleting item', request.params.itemId);
 
@@ -71,7 +72,7 @@ export function setupShop(app: Express){
     app.post('/api/shop/checkout', (request, response) => {
         
         let data = request.body;
-        let cart : ICartItem[] = data.cart;
+        let cart : IShopItem[] = data.cart;
         let price = _.reduce(cart, (a, b) => a + b.price * b.quantity , 0);
 
         console.log('Got checkout', data);
@@ -89,7 +90,7 @@ export function setupShop(app: Express){
         })
     });
 
-    app.get('/api/shop/checkout', (request, response) => {
+    app.get('/api/shop/checkout', verifyToken, (request, response) => {
         Database.executeQuery("SELECT * from checkout")
         .then(result => {
             response.json(result.rows);

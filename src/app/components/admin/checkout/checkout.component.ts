@@ -1,4 +1,5 @@
 import { ShopService } from "../../../services/shop.service";
+import { AuthService } from "../../../services/auth.service";
 
 class Controller {
 
@@ -6,14 +7,15 @@ class Controller {
 
     /* @ngInject */
     constructor(
-        private Shop : ShopService
+        private Shop : ShopService,
+        private Auth : AuthService,
     )
     {};
 
     $onInit(){
+        this.Auth.redirectIfNotAdmin();
         this.Shop.getCheckoutItems()
         .then(result => {
-            console.log('checkout', result);
             this.gifts = result;
         })
     }

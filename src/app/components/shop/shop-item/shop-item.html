@@ -1,8 +1,8 @@
 <div class="shop-item">
   <img class="img-responsive item-image" ng-src="{{$ctrl.item.image}}">
-  <h4 ng-hide="$ctrl.editing">{{$ctrl.item.name}}</h4>
+  <h4 ng-hide="$ctrl.editing">{{$ctrl.getName($ctrl.item)}}</h4>
   <h4 ng-show="$ctrl.editing"><input type="text" class="form-control" ng-model="$ctrl.item.name"></h4>
-  <p>{{$ctrl.item.description}}</p>
+  <h4 ng-show="$ctrl.editing"><input type="text" class="form-control" ng-model="$ctrl.item.name_french"></h4>
   <div ng-show="$ctrl.admin">
     <button class="btn btn-primary" ng-hide="$ctrl.editing" ng-click="$ctrl.editItem()"><span class="glyphicon glyphicon-pencil"></span></button>
     <button class="btn btn-success" ng-show="$ctrl.editing" ng-click="$ctrl.updateItem()"><span class="glyphicon glyphicon-ok"></span></button>

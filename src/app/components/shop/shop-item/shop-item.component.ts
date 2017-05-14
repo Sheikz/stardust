@@ -1,11 +1,11 @@
 import {ShopService} from './../../../services/shop.service';
-import {IShopItem, ICartItem} from 'app';
+import {IShopItem} from 'app';
 import * as _ from 'lodash';
 
 class Controller{
 
     public item : IShopItem;
-    public cart : ICartItem[];
+    public cart : IShopItem[];
 
     public editing : boolean = false;
 
@@ -13,6 +13,7 @@ class Controller{
     constructor(
         private Shop : ShopService,
         private $rootScope : ng.IRootScopeService,
+        private $translate : angular.translate.ITranslateService
     ){
 
     }
@@ -22,11 +23,15 @@ class Controller{
         if (existingItem)
             existingItem.quantity++;
         else{
-            let newItem = _.clone(this.item) as ICartItem;
+            let newItem = _.clone(this.item);
             newItem.quantity = 1;
             this.cart.push(newItem);
         }
         this.item.quantity--;
+    }
+
+    getName(item : IShopItem){
+        return (this.$translate.use() === 'fr') ? item.name_french : item.name;
     }
 
     editItem(){

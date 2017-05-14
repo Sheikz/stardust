@@ -1,9 +1,9 @@
 import {ShopService} from './../../../services/shop.service';
-import {ICartItem} from 'app';
+import {IShopItem} from 'app';
 
 export class CheckoutController{
 
-    public cart : ICartItem[];
+    public cart : IShopItem[];
     public validated = false;
     public name : string;
     public comment : string;
@@ -17,7 +17,6 @@ export class CheckoutController{
 
     $onInit(){
         this.cart = this.$stateParams['cart'];
-        console.log('init checkout', this.cart);
     }
 
     getTotal(){

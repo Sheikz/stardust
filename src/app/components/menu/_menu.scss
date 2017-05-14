@@ -2,7 +2,7 @@
 
     border-bottom: 1px solid $turquoise;
     background-color: white;
-    font-family: 'Pacifico', cursive;
+    font-family: $font-titles;
 
     li{
 
@@ -38,10 +38,10 @@
     }
 
     .navbar-toggle{
-        border-color: $third;
+        border-color: $turquoise;
     }
 
     .icon-bar{
-        background-color: $primary !important;
+        background-color: $turquoise !important;
     }
 }

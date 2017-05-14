@@ -1,38 +1,20 @@
 <div class="container-fluid" ng-controller="shopController as $ctrl">
 
   <h3 translate="gifts_title"></h3>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <p translate="gift_intro"></p>
+    </div>
+  </div>
   <h2 translate="gifts_florence"></h2>
   <div class="gifts_container">
     <div class="gift" ng-repeat="item in $ctrl.florenceItems">
       <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
     </div>
   </div>
-
-  <!-- First row with the 3 first florence items -->
-  <!--<div class="row">
-    <div class="col-sm-3" ng-repeat="item in $ctrl.firstFlorenceItems">
-      <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
-    </div>
-    <div class="col-sm-3">
-      <shop-cart cart="$ctrl.cart"></shop-cart>
-    </div>
-  </div>
-  <!-- Rest of Florence items -->
-  <!--<div class="row" ng-repeat="items in $ctrl.florenceItems | groupBy:4">
-    <div class="col-sm-3" ng-repeat="item in items">
-      <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
-    </div>
-  </div>-->
-
   <hr>
   <div>
     <h2 translate="gifts_mauritius"></h2>
-    <!-- Mauritius items -->
-    <!--<div class="row" ng-repeat="items in $ctrl.mauritiusItems | groupBy:4">
-      <div class="col-sm-3" ng-repeat="item in items">
-        <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
-      </div>
-    </div>-->
     <div class="gifts_container">
       <div class="gift" ng-repeat="item in $ctrl.mauritiusItems">
         <shop-item item="item" cart="$ctrl.cart" admin="$ctrl.admin"></shop-item>
@@ -40,9 +22,30 @@
     </div>
   </div>
   <div class="row">
+    <div class="col-sm-8">
+      <p translate="gifts_offer_other"></p>
+      <form name="form" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-xs-4 control-label" translate="gifts_other_name"></label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" ng-model="$ctrl.other.name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-4 control-label" translate="gifts_other_value"></label>
+            <div class="col-xs-4">
+                <input type="number" class="form-control" ng-model="$ctrl.other.price">
+            </div>
+            <div class="col-xs-4">
+              <button ng-disabled="$ctrl.other.name.length == 0 || !$ctrl.other.price" ng-click="$ctrl.addOther()" class="btn btn-primary"><span class="glyphicon glyphicon-gift">&nbsp;<span translate="gifts_offer"></span></span></button>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
       <shop-cart cart="$ctrl.cart"></shop-cart>
     </div>
   </div>
-
 </div>
