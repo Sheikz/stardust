@@ -19,11 +19,9 @@ export class AuthService {
 
     verifyToken(){
         let token = localStorage.getItem('token');
-        if (token){
-            return this.$http.post('api/verify', {
+        return this.$http.post('api/verify', {
                 token: token
-            })
-        }
+        });
     }
     
     login(name: string, password: string){
