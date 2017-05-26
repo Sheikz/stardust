@@ -11,8 +11,9 @@ class Controller {
     }
 
     public slides = [
-        "http://i.imgur.com/McvKois.jpg",
-        "http://i.imgur.com/1OPWatI.jpg",
+        "https://i.imgur.com/YcAADgV.jpg",
+        "https://i.imgur.com/McvKois.jpg",
+        "https://i.imgur.com/wVOUbea.jpg",
     ];
 
     public myInterval = 5000;
