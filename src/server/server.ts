@@ -7,6 +7,8 @@ import * as Database from "./services/database";
 import { setupGuests } from "./routes/guests/guests";
 import { setupAuth } from "./routes/auth/auth";
 
+let sslRedirect = require('heroku-ssl-redirect');
+
 require('dotenv').config()
 
 Config.init();
@@ -17,6 +19,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static('public'));
 app.use(express.static('dist/app'));
 app.use(bodyParser.json());
+app.use(sslRedirect());
 
 app.set('port', PORT);
 
