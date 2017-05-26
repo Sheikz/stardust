@@ -27,7 +27,6 @@ export class ShopController{
     .then((items : IShopItem[]) => {
       this.florenceItems = items.filter(item => item.category == 'florence');
       this.mauritiusItems = items.filter(item => item.category == 'mauritius');
-      console.log('items', items);
       this.isLoaded = true;
     });
   }
@@ -42,11 +41,9 @@ export class ShopController{
     this.cart.push(_.clone(newItem));
     this.other.name = '';
     this.other.price = null;
-    console.log('cart', this.cart);
   }
 
   resetCart(){
-    console.log('reseting cart', this.cart);
     this.cart.forEach(cartItem => {
       let item = _.find(this.florenceItems, item => item.id === cartItem.id)
       if (item)

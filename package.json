@@ -58,6 +58,7 @@
     "ts-loader": "2.0.0",
     "tsify": "2.0.3",
     "typescript": "2.1.4",
+    "uglify-js": "3.0.0",
     "uglifyjs-webpack-plugin": "0.4.3",
     "url-loader": "0.5.8",
     "vinyl-source-stream": "1.1.0",

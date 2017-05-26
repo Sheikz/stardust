@@ -16,7 +16,6 @@ class Controller {
         this.Auth.login(this.name, this.password)
         .then(result => {
             this.success = result ? 'success' : 'error';
-            console.log('success', this.success);
         })
     }
 }
