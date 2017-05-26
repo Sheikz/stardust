@@ -11,12 +11,17 @@ export class CheckoutController{
     /* @ngInject */
     constructor(
         private $stateParams: ng.ui.IStateParamsService,
-        private Shop: ShopService
+        private Shop: ShopService,
+        private $translate: angular.translate.ITranslateService
     )
     {}
 
     $onInit(){
         this.cart = this.$stateParams['cart'];
+    }
+
+    getName(item : IShopItem){
+        return (this.$translate.use() === 'fr') ? item.name_french : item.name;
     }
 
     getTotal(){

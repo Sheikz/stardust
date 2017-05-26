@@ -5,26 +5,32 @@
     <link rel="stylesheet" href="base.css" >
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
   </head>
   <body ng-app="app">
 
-    <menu></menu>
+    <menu></menu>    
 
+    <intro-pictures ng-show="'info' | isState"></intro-pictures>
+    
 
-    <img src="/images/bali.jpg" ng-show="'info' | isState" class="img-responsive header-image">
     <div class="container content">
-
 
       <div class="page-inner">
 
         <ui-view></ui-view>
       </div>
 
-      <banner-bottom></banner-bottom>
+      
     </div>
 
-    <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
+    <banner ng-show="'info' | isState"></banner>
 
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
     <script src="vendors.min.js"></script>
     <script src="app.min.js"></script>
   </body>

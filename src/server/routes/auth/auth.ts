@@ -33,7 +33,6 @@ export function setupAuth(app: Express) {
     })
 
     app.post('/api/verify', (request, response) => {
-        console.log('auth body', request.body);
         let token = request.body.token;
         if (!token)
             return response.json({auth: 'NOK'});

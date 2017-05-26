@@ -13,12 +13,11 @@ h3{
 
 .content{
     margin-top:45px;
+    margin-bottom: 45px;
     padding-bottom: 20px;
     //border: 1px solid $blue;
     border-radius: 20px;
 }
-
-
 
 .inscription-form{
 
@@ -96,4 +95,16 @@ h3{
 
 .text-block{
     padding: 25px;
+}
+
+.banner-bottom{
+    .author{
+        padding-top: 15px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+}
+
+.carousel{
+    padding-top: 30px;
 }

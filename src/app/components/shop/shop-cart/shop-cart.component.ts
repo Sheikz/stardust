@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 class Controller{
 
     public cart : IShopItem[]
+    public onCancel : Function;
 
     /* @ngInject */
     constructor(private Shop: ShopService)
@@ -15,6 +16,7 @@ class Controller{
     }
 
     cancel(){
+        this.onCancel();
         this.cart = [];
     }
 }
@@ -23,6 +25,7 @@ export let ShopCartComponent : ng.IComponentOptions = {
     template: require('./shop-cart.html'),
     bindings: {
         cart: "=",
+        onCancel: "&",
     },
     controller: Controller
 }

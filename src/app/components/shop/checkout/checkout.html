@@ -3,7 +3,7 @@
     <h3 translate="checkout_summary"></h3>
 
     <div ng-repeat="item in $ctrl.cart">
-        {{item.name}} - {{item.quantity}}
+        {{$ctrl.getName(item)}} - {{item.quantity}}
     </div>
     <span translate="checkout_total"></span> <strong>{{$ctrl.getTotal()}} €</strong>
 

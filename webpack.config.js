@@ -17,9 +17,9 @@ module.exports = {
       extensions: [".webpack.js", ".web.js", ".ts", ".js", ".css", ".scss"]
   },
   plugins : [
-    //new ngAnnotatePlugin({add: true}),
-    extractCSS
-    //new UglifyJSPlugin(),
+    new ngAnnotatePlugin({add: true}),
+    extractCSS,
+    new UglifyJSPlugin(),
   ],
   module: {
     loaders: [

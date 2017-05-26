@@ -1,8 +1,9 @@
-angular.module('app', 
+angular.module('app',
     ['ui.router', 
-    'angular.filter', 
+    'angular.filter',
     'pascalprecht.translate',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngAnimate',
     ]);
 
 import "./services/services.module";

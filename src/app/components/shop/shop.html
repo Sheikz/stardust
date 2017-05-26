@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="shopController as $ctrl">
+<div class="container-fluid" ng-controller="shopController as $ctrl" ng-show="$ctrl.isLoaded">
 
   <h3 translate="gifts_title"></h3>
   <div class="row">
@@ -44,8 +44,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <shop-cart cart="$ctrl.cart"></shop-cart>
+    <div class="col-sm-8 col-sm-offset-2">
+      <shop-cart cart="$ctrl.cart" on-cancel="$ctrl.resetCart()"></shop-cart>
     </div>
   </div>
 </div>

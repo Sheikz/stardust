@@ -7,7 +7,10 @@ function MyHttpInterceptor($q : ng.IQService, $location : ng.ILocationService, $
     };
 
     function onResponse(response) {
-        return response.data;
+        if (response.config.url.match(/\.html$/))
+            return response;
+        else
+            return response.data;
     }
 }
 

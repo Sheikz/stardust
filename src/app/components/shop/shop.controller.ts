@@ -7,9 +7,9 @@ export class ShopController{
 
   public florenceItems : IShopItem[];
   public mauritiusItems : IShopItem[];
-  public firstFlorenceItems : IShopItem[];
   public cart : IShopItem[];
   public other;
+  public isLoaded = false;
 
   /* @ngInject */
   constructor(
@@ -27,8 +27,8 @@ export class ShopController{
     .then((items : IShopItem[]) => {
       this.florenceItems = items.filter(item => item.category == 'florence');
       this.mauritiusItems = items.filter(item => item.category == 'mauritius');
-      //this.firstFlorenceItems = this.florenceItems.splice(0, 3);
       console.log('items', items);
+      this.isLoaded = true;
     });
   }
 
@@ -43,5 +43,18 @@ export class ShopController{
     this.other.name = '';
     this.other.price = null;
     console.log('cart', this.cart);
+  }
+
+  resetCart(){
+    console.log('reseting cart', this.cart);
+    this.cart.forEach(cartItem => {
+      let item = _.find(this.florenceItems, item => item.id === cartItem.id)
+      if (item)
+        item.quantity += cartItem.quantity;
+
+      item = _.find(this.mauritiusItems, item => item.id === cartItem.id)
+      if (item)
+        item.quantity += cartItem.quantity;
+    })
   }
 }
