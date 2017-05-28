@@ -21,7 +21,7 @@ export class CheckoutController{
     }
 
     getName(item : IShopItem){
-        return (this.$translate.use() === 'fr') ? item.name_french : item.name;
+        return (this.$translate.use() === 'fr') ? (item.name_french ||item.name) : item.name;
     }
 
     getTotal(){
