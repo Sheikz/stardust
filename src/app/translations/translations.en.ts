@@ -8,6 +8,7 @@ export const englishTranslations = {
     countdown_minutes: "minutes",
     countdown_seconds: "seconds",
     location_title: "When &amp; Where",
+    location_intro: "16 o'clock at 'Le Relais des Rêves'",
     location_text: "Our wedding will take place at 16:00 at 'Le Relais des Rêves', an enchanting renovated farm located in the heart of Wallonia",
     location_hotel_title: "Hotels in the viscinity: ",
     location_hotel_text: " - {{time}} minutes by car",
