@@ -14,7 +14,8 @@ class Controller {
         private $location : ng.ILocationService,
         private $scope : ng.IScope,
         private $state : ng.ui.IStateService,
-        private $rootScope : ng.IRootScopeService)
+        private $rootScope : ng.IRootScopeService,
+        private $anchorScroll : ng.IAnchorScrollService)
     {}
 
     $onInit(){
@@ -44,6 +45,9 @@ class Controller {
             this.currentState = 'info';
     }
 
+    scroll(){
+        this.$anchorScroll();
+    }
 }
 
 export let MenuComponent : ng.IComponentOptions = {

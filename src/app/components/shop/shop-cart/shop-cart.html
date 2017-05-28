@@ -12,7 +12,7 @@
             <div class="col-xs-4">
                 <strong translate="cart_total"></strong> {{$ctrl.getTotal()}} €
             </div>
-                <div class="col-xs-4 col-xs-offset-4">
+                <div class="col-xs-7 col-xs-offset-1">
                 <button class="btn btn-primary" ui-sref="checkout({cart: $ctrl.cart})"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;<span translate="cart_checkout"></span></button>
                 <button class="btn btn-danger pull-right" ng-click="$ctrl.cancel()"><span class="glyphicon glyhipcon-cancel"></span>&nbsp;<span translate="cart_reset"></span></button>
             </div>

@@ -7,7 +7,8 @@ export const englishTranslations = {
     countdown_hours: "hours",
     countdown_minutes: "minutes",
     countdown_seconds: "seconds",
-    location_text: "Our wedding will happen at the Relais des Rêves, an enchanting renovated farm located in the heart of the Brabant Wallon",
+    location_title: "When &amp; Where",
+    location_text: "Our wedding will take place at 16:00 at 'Le Relais des Rêves', an enchanting renovated farm located in the heart of Wallonia",
     location_hotel_title: "Hotels in the viscinity: ",
     location_hotel_text: " - {{time}} minutes by car",
     gifts_title: "Wedding List",
@@ -43,8 +44,10 @@ export const englishTranslations = {
     register_button: "Register",
     register_success: "Thank you, we received your registration!",
     honeymoon_florence_title: "Florence",
+    honeymoon_florence_text: "The day after the wedding, we will fly to Florence to enjoy our 'mini-moon'. <br>Why Italy, why Florence? First of all, the food! On top of that (very good) reason, we are looking forward to discover the ancient city; from strolling in the streets with an ice cream in our hands, to gawking in front of 'The birth of Venus', Botticelli's masterpiece, to sipping some wine on a rooftop bar with a view on the duomo! <br>Sounds like a perfect combination, and we can't wait to go!",
     honeymoon_mauritius_title: "Mauritius",
+    honeymoon_mauritius_text: "In November, when the grey days make their gloomy return, we will fly to sunny Mauritius! <br>Of course, the beaches & cocktails seem alluring, but there is so much more to see! Spices, tastes, colors & sunsets, adventures from the bottom of the black river canyon to the top of the Morne mountain, bright fishes that dance between the dolphins and the waves...<br> November still seems so far away!",
     honeymoon_title: "Our honeymoon",
-    honeymoon_text: "Because travels have loved us, because we loved them in return, because they brought us closer together, passionate, and that on each journey we discovered little bits of ourselves that we loved even more strongly",
+    honeymoon_text: "Because travels loved us, and that we have loved them back, because they brought us closer together and sparked our passion, and that on each journey we have discovered little bits of ourselves, falling in love with each and every one of them",
     honeymoon_link: 'If you want to help us realize those travels, head over to the <a ui-sref="shop">wedding gift page</a>'
 }

@@ -7,7 +7,8 @@ export const frenchTranslations = {
     countdown_hours: "heures",
     countdown_minutes: "minutes",
     countdown_seconds: "secondes",
-    location_text: "Notre mariage se déroulera au Relais des rêves, une ferme enchanteresse située dans le coeur du Brabant Wallon.",
+    location_title: "Où &amp; Quand",
+    location_text: "Notre mariage aura lieu à 16:00 au Relais des rêves, une ferme enchanteresse située dans le coeur du Brabant Wallon.",
     location_hotel_title: "Les hotels à proximité:",
     location_hotel_text: " - {{time}} minutes en voiture",
     gifts_title: "Liste de Mariage",
@@ -42,8 +43,10 @@ export const frenchTranslations = {
     register_button: "S'inscrire",
     register_success: "Merci, nous avons bien reçu votre inscription!",
     honeymoon_florence_title: "Florence",
+    honeymoon_florence_text: "Le lendemain de notre mariage, nous nous envolerons vers Florence pour notre mini lune de miel. <br>Pourquoi l'Italie, pourquoi Florence? Pour les pâtes! C'est bien connu, Thomas & moi sommes amoureux de la cuisine italienne! Et si cette raison n'était pas suffisante,nous sommes impatients de découvrir Florence; Se balader dans la vielle ville, une glace à la main, s'émerveiller devant le chef d'oeuvre de Botticelli 'la naissance de Venus', ou encore déguster un verre de vin avec vue sur la Cathédrale. <br>Une combinaison parfaite, et on ne peut plus attendre de partir!",
     honeymoon_mauritius_title: "Île Maurice",
+    honeymoon_mauritius_text: "En novembre, lorsque la grisaille de Belgique s'installe, nous nous envolerons vers le soleil de l'île Maurice! <br>Bien sûr il y a les plages et ses cocktails alléchants, mais ce n'est pas tout! Des épices, des goûts, des paysages, des couchers de soleil, des aventures du fond des gorges de la rivière noire au sommet du Morne, des poissons multicolores qui dansent entre les vagues et les dauphins... <br>Novembre nous semble soudain si loin!",
     honeymoon_title: "Notre lune de miel",
-    honeymoon_text: "Parce que les voyages nous ont aimés, parce que nous les avons aimés en retour, parce qu'ils nous ont rapprochés, passionés, et qu'à chaque voyage nous nous sommes découvert des petits bouts de nous, que nous avons aimé encore plus fort",
-    honeymoon_link: 'Si vous voulez nous aider à réaliser ces voyages, rendez-vous sur notre page <a ui-sref="shop">voyage</a>'
+    honeymoon_text: "Parce que les voyages nous ont aimés, parce que nous les avons aimés en retour, parce qu'ils nous ont rapprochés, passionés, et qu'à chaque voyage nous nous sommes découvert des petits bouts de nous, que nous avons aimés encore plus fort",
+    honeymoon_link: 'Si vous voulez nous aider à réaliser ces voyages, rendez-vous sur notre page <a ui-sref="shop">voyages</a>'
 }
