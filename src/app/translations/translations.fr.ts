@@ -12,7 +12,7 @@ export const frenchTranslations = {
     location_hotel_title: "Les hotels à proximité:",
     location_hotel_text: " - {{time}} minutes en voiture",
     gifts_title: "Liste de Mariage",
-    gift_intro: "Pour notre lune de miel, nous avons décidé de partir à Florence et à l'Île Maurice. Vous pouvez nous aider à réaliser ces voyages en nous offrant les éléments ci-dessous",
+    gift_intro: "Pour notre lune de miel, nous nous envolerons à Florence. En Novembre, nous nous échapperons à l'Île Maurice. Vous pouvez nous aider à réaliser ces voyages en nous offrant les éléments ci-dessous",
     gifts_florence: "Florence",
     gifts_mauritius: "Île Maurice",
     gifts_price: "Prix",

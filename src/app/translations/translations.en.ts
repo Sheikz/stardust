@@ -12,7 +12,7 @@ export const englishTranslations = {
     location_hotel_title: "Hotels in the viscinity: ",
     location_hotel_text: " - {{time}} minutes by car",
     gifts_title: "Wedding List",
-    gift_intro: "After our wedding, we have decided to do our mini-moon in Florence, and our honeymoon in Mauritius. Please help us to realize those travels by participating below",
+    gift_intro: "After our wedding, we will fly to Florence for our mini-moon, and escape to Mauritius for our honey-moon. Please help us to realize those dream travels by participating below",
     gifts_florence: "Florence",
     gifts_mauritius: "Mauritius",
     gifts_price: "Price",
