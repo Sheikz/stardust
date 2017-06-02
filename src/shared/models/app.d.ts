@@ -13,6 +13,7 @@ declare module 'app' {
     interface IGuest {
         name: string,
         dinner: boolean,
+        id? : number,
     }
 
     interface IRegisterEntry {

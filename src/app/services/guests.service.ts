@@ -17,9 +17,18 @@ export class GuestsService {
 
     getGuestList() : ng.IPromise<IGuest[]>{
         return this.$http.get('api/guests', {
-      headers: {
-        token: this.Auth.getToken()
-      }
-    });
+            headers: {
+                token: this.Auth.getToken()
+            }
+        });
+    }
+
+    removeGuest(guest : IGuest) : ng.IPromise<any>{
+        console.log('removing guest', guest);
+        return this.$http.delete(`api/guests/${guest.id}`, {
+            headers: {
+                token: this.Auth.getToken()
+            }
+        });
     }
 }

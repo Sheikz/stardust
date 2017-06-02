@@ -16,10 +16,19 @@ class Controller {
     $onInit(){
         this.Auth.redirectIfNotAdmin();
         
+        this.reload();
+    }
+
+    private reload(){
         this.Guests.getGuestList()
         .then(guests => {
             this.guests = guests;
         })
+    }
+
+    removeGuest(guest){
+        this.Guests.removeGuest(guest)
+        .then(() => this.reload());
     }
 }
 

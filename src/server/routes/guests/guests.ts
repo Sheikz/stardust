@@ -37,4 +37,17 @@ export function setupGuests(app: Express){
             response.status(500).json({error: err});
         })
     });
+
+    app.delete('/api/guests/:guestId', verifyToken, (request, response) => {
+        let id = request.params.guestId;
+        Database.executeQuery('DELETE from subscription where id = $1', [id])
+        .then(result => {
+            console.log('Guest '+id+ ' deleted succesfully', result)
+            response.sendStatus(200);
+        })
+        .catch(err => {
+            console.log('Error when deleting guest '+id, err);
+            response.status(500).json({error: err});
+        });
+    })
 }
