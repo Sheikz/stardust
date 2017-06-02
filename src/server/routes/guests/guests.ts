@@ -7,6 +7,7 @@ export function setupGuests(app: Express){
 
     app.post('/api/register', (request, response) => {
         let subscription : IRegisterEntry = request.body;
+        console.log('Got subscription', subscription);
 
         let promises = [];
         promises.push(Database.executeQuery('INSERT INTO subscription (name, note, email, joining) VALUES ($1, $2, $3, $4)',
@@ -18,10 +19,11 @@ export function setupGuests(app: Express){
         })
         Promise.all(promises)
         .then(result => {
+            console.log('Executed subscription', result);
             response.sendStatus(200);
         })
         .catch(err => {
-            console.log('error while registering', err);
+            console.log('Error while registering', err);
             response.status(500).json({error : err});
         })
     })
