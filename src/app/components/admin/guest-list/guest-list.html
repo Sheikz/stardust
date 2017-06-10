@@ -12,5 +12,6 @@
         <td>{{guest.email}}</td>
         <td>{{guest.joining ? 'Oui' : 'Non'}}</td>
         <td>{{guest.note}}</td>
+        <td><span role="button" ng-click="$ctrl.removeGuest(guest)" class="glyphicon glyphicon-remove"></span></td>
     </tr>
 </table>

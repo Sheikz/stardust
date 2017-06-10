@@ -25,7 +25,14 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 app.use(express.static('dist/app'));
 app.use(bodyParser.json());
-app.use(sslRedirect());
+// app.use(sslRedirect());
+
+app.get('*',function(req,res,next){
+  if(req.headers['x-forwarded-proto']!='https')
+    res.redirect('https://www.lynnie-thomas.com'+req.url)
+  else
+    next() /* Continue to other routes if we're not redirecting */
+})
 
 app.set('port', PORT);
 
