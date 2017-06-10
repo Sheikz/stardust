@@ -33,7 +33,7 @@ export const englishTranslations = {
     checkout_comment: "Comment",
     checkout_correct: "It is correct!",
     checkout_cancel: "Cancel",
-    checkout_success:"Thank you, we received your gift successfully!<br>Please send us the sum <strong>{{total}} €</strong> on the account <strong>BE94 2100 6407 4414</strong>",
+    checkout_success:"Thank you, we received your gift successfully!<br>Please send us the sum <strong>{{total}} €</strong> on the account <strong>BE12 0018 1411 2992</strong>",
     register_title: "Will you attend?",
     register_name: "Name",
     register_add_guest: "Add an attendee",
