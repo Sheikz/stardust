@@ -8,6 +8,7 @@ class Controller{
     public cart : IShopItem[];
 
     public editing : boolean = false;
+    public popoverOpen : boolean = false;
 
     /* @ngInject */
     constructor(
@@ -28,6 +29,8 @@ class Controller{
             this.cart.push(newItem);
         }
         this.item.quantity--;
+        this.popoverOpen = true;
+        setTimeout(() => this.popoverOpen = false, 5000);
     }
 
     getName(item : IShopItem){

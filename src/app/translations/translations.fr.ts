@@ -19,6 +19,7 @@ export const frenchTranslations = {
     gifts_price: "Prix",
     gifts_remaining: "Reste",
     gifts_offer: "Offrir",
+    gifts_offer_tooltip: "Votre cadeau a été rajouté à votre liste! Rendez-vous en bas de la page pour confirmer",
     gifts_offer_other: "Vous voulez nous offrir autre chose? Dites nous quoi et la valeur du cadeau",
     gifts_other_name: "Cadeau",
     gifts_other_value: "Valeur",

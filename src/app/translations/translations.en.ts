@@ -19,6 +19,7 @@ export const englishTranslations = {
     gifts_price: "Price",
     gifts_remaining: "Remaining",
     gifts_offer: "Give",
+    gifts_offer_tooltip: "Your gift has been added to your cart! Scroll to the bottom of the page to confirm",
     gifts_offer_other: "Do you want to offer us something else? Please tell us what and the value of the gift",
     gifts_other_name: "Gift",
     gifts_other_value: "Value",
