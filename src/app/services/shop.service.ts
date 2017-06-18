@@ -63,6 +63,14 @@ export class ShopService{
       }
     });
   }
+
+  removeGift(gift){
+    return this.$http.delete(`api/shop/checkout/${gift.id}`, {
+      headers: {
+          token: this.Auth.getToken()
+      }
+    });
+  }
 }
 
 angular.module('app')

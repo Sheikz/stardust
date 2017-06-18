@@ -16,7 +16,7 @@
                 <ul>
                     <li ng-repeat="item in gift.cart">{{item.name}}: {{item.price}} €: x{{item.quantity}}</li>
                 </ul>
-            </td>
+            <td><span role="button" ng-click="$ctrl.removeGift(gift)" class="glyphicon glyphicon-remove"></span></td>
         </tr>
     </table>
 </div>

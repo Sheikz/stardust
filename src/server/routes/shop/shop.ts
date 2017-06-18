@@ -96,6 +96,19 @@ export function setupShop(app: Express){
             response.json(result.rows);
         })
     })
+
+    app.delete('/api/shop/checkout/:giftId', verifyToken, (request, response) => {
+        let id = request.params.giftId;
+        Database.executeQuery('DELETE from checkout where id = $1', [id])
+        .then(result => {
+            console.log('Gift '+id+ ' deleted succesfully', result)
+            response.sendStatus(200);
+        })
+        .catch(err => {
+            console.log('Error when deleting gift '+id, err);
+            response.status(500).json({error: err});
+        });
+    })
 }
 
 function incrementItemQuantity(id: number, quantity: number){

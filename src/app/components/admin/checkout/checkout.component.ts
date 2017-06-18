@@ -14,10 +14,19 @@ class Controller {
 
     $onInit(){
         this.Auth.redirectIfNotAdmin();
+        this.reload();
+    }
+
+    private reload(){
         this.Shop.getCheckoutItems()
         .then(result => {
             this.gifts = result;
         })
+    }
+
+    removeGift(gift){
+        this.Shop.removeGift(gift)
+        .then(() => this.reload());
     }
 }
 
